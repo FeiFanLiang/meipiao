@@ -3,19 +3,19 @@
         <div class="nav-warp">
             <div class="nav">
                 <div class="nav-panels">
-                    <router-link tag="div" class="nav-items" to="./">
+                    <router-link tag="div" class="nav-items" to="./ticket">
                         <i class="icon-ticket"></i>
                         <span>机 票</span>
                     </router-link>
-                    <router-link tag="div" class="nav-items" to="./">
+                    <router-link tag="div" class="nav-items" to="./hotel">
                         <i class="icon-hotel"></i>
                         <span>酒 店</span>
                     </router-link>
-                    <router-link tag="div" class="nav-items" to="./">
+                    <router-link tag="div" class="nav-items" to="./rental">
                         <i class="icon-rental"></i>
                         <span>租 车</span>
                     </router-link>
-                    <router-link tag="div" class="nav-items" to="./">
+                    <router-link tag="div" class="nav-items" to="./holiday">
                         <i class="icon-holiday"></i>
                         <span>度 假</span>
                     </router-link>
@@ -28,23 +28,8 @@
             </div>
             
         </div>
-        <div class="hotel-search">
-            <!-- <div class="items-column">
-                <div class="search-item">
+        <!-- <div class="hotel-search">
 
-                </div>
-                <div class="search-item">
-                    
-                </div>
-            </div>
-            <div class="items-column">
-                <div class="search-item">
-                    
-                </div>
-                <div class="search-item">
-                    
-                </div>
-            </div> -->
             <div class="search-group">
             <div class="search-item">
                     
@@ -77,14 +62,15 @@
             <div class="search-link">
             <div class="link-button">搜 索 ></div>
         </div>
-        </div>
-        
+        </div> -->
+        <router-view></router-view>
     </div>
 </template>
 <script>
     
 </script>
 <style>
+
 .nav{
     
     height: 1.84rem;
@@ -155,7 +141,7 @@
     padding-left: 0.19rem;
     background:rgba(255,255,255, 0.2)
 }
-.hotel-search{
+/* .hotel-search{
     width: 100%;
    
     
@@ -175,9 +161,9 @@
     position: relative;
     width: 46.29%;
     padding-top: 46.29%;
-    /* height: 2.5rem; */
+     */
     
-}
+/* }
 .search-item:nth-child(1),.search-item:nth-child(3){
     margin-right: 0.4rem;
 }
@@ -230,8 +216,8 @@
     border-width: 0 0.05rem 0.05rem 0;
     border-style: solid;
     border-color: #fff;
-}
-.search-link{
+} */
+/* .search-link{
     display: flex;
     justify-content: center;
     padding-top: 1rem;
@@ -242,6 +228,6 @@
     font-size: 0.3rem;
     color: #ff6600;
     text-decoration: underline;
-}
+} */
 </style>
 
