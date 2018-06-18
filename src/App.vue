@@ -25,7 +25,7 @@ export default {
 <style>
 body{
   font-family: '微软雅黑','Microsoft YaHei';
-  color: #fff;
+  color:#303030;
 }
 #app{
   font-size: 0.24rem;

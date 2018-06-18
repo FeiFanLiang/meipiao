@@ -8,7 +8,7 @@
                     <span class="deatils-num">人数：5人 房间：3间</span>
                 </div>
                 <div class="edit-button">
-                    <button class="edit-btn">编辑</button>
+                    <button class="edit-btn">编 辑</button>
                 </div>
             </div>
             
@@ -20,23 +20,30 @@
                 <div class="filt-more">
                     <span>更多条件筛选>></span>                    
                 </div>
-            </div>
+        </div>
+        <div class="hotel-list-wrap">
+            <HotelList></HotelList>
+        </div>
     </div>
 </template>
 <script>
 import { Search } from 'vant'
+import HotelList from '@/components/hotel-list/hotel-list'
 export default {
     components:{
-        Search
+        Search,
+        HotelList
     }
 }
 </script>
 <style>
     /* 头部搜索条件 */
     .search-details-wrap{
+        
         height: 1.4rem;
         padding: 0 0.16rem;
         font-size: 0.18rem;
+        line-height: 0.18rem;
     }
     .search-details{
         display: flex;
@@ -63,9 +70,11 @@ export default {
         font-size: 0.2rem;
         color:#333333;
         margin-bottom: 0.17rem;
+        line-height: 0.2rem;
     }
     .details-date{
         margin-bottom: 0.19rem;
+        line-height: 0.18rem;
         color: #3d3d3d;
     }
     .deatils-num{
@@ -77,6 +86,7 @@ export default {
         height: 0.36rem;
         line-height: 0.36rem;
         font-size: 0.16rem;
+        
         color: #ff8a00;
         border: 0.01rem solid #ff8a00;
         border-radius: 0.08rem;
@@ -84,17 +94,34 @@ export default {
     /* 条件筛选框 */
     .hotel-filt{
         display: flex;
+        align-items: center;
         padding: 0 0.29rem 0 0.26rem;
+        height: 0.75rem;
+        border-bottom: 0.01rem solid #e9e9e9;
     }
     .hotel-input{
         flex: 1;
 
     }
     .filt-more{
+    
        margin-left: 0.27rem;
        font-size: 0.14rem;
+       line-height: 0.14rem;
        color: #0879e3;
 
+    }
+    .van-search{
+       background: #ffffff !important;
+       padding: 0.09rem 0.11rem;
+       border: 0.01rem solid #e6e6e6;
+    }
+    .van-search .van-icon-search{
+        left: 0.11rem;
+    }
+    .van-field__control{
+        font-size: 0.16rem;
+        color: #a9a9a9;
     }
 </style>
 
