@@ -20,14 +20,17 @@ module.exports = {
     filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+      : config.dev.assetsPublicPath,
+    chunkFilename: 'chunk[id].js?[chunkhash]',
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'pages':resolve('src/pages')
+      'pages':resolve('src/pages'),
+      'hotel':resolve('src/pages/hotel'),
+      'commonjs':resolve('src/common/js'),
     }
   },
   module: {

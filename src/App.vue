@@ -2,10 +2,7 @@
   <div id="app">
     
     <header class="topHeader">
-      <div class="header-menu">
-        <i class="menu-border2x"></i>
-        <i class="menu-border"></i>
-      </div>
+      <AsideList></AsideList>
       <div class="header-log">
         <h1>美票网</h1>
         </div>
@@ -17,8 +14,12 @@
 </template>
 
 <script>
+import AsideList from '@/components/common/aside/aside'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    AsideList
+  }
 }
 </script>
 
@@ -34,9 +35,9 @@ body{
   position: relative;
   display: flex;
   height: 1rem;
-  
+  color: #fff;
 }
-.header-menu{
+/* .header-menu{
   position:absolute;
   top: 0.35rem;
   left: 0.32rem;
@@ -60,7 +61,7 @@ body{
 .menu-border{
   width: 0.2rem;
   
-}
+} */
 .header-log{
   display: inline-flex;
   align-items: center;

@@ -24,15 +24,29 @@
         <div class="hotel-list-wrap">
             <HotelList></HotelList>
         </div>
+        <Fiter v-show="fiterShow"></Fiter>
+        <Loading v-if="loading"></Loading>
     </div>
 </template>
 <script>
 import { Search } from 'vant'
 import HotelList from '@/components/hotel-list/hotel-list'
+import Fiter from 'pages/hotel/hotel-search/search-fiter'
+import Loading from '@/components/common/loading/loading'
 export default {
     components:{
         Search,
-        HotelList
+        HotelList,
+        Fiter,
+        Loading
+
+    },
+    data(){
+        return{
+            fiterShow:false,
+            loading:false,
+
+        }
     }
 }
 </script>

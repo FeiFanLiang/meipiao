@@ -28,51 +28,23 @@
             </div>
             
         </div>
-        <!-- <div class="hotel-search">
-
-            <div class="search-group">
-            <div class="search-item">
-                    
-                    <div class="item-text">
-                        <i class="icon-corner"></i>
-                        <span class="item-title">入住</span>
-                        <span class="item-middle">2018.10.10</span>
-                        <span class="item-footer">周二</span>
-                    </div>
-                </div>
-            <div class="search-item">
-                    <div class="item-text">
-                        <i class="icon-corner"></i>
-                        <span class="item-title">离店</span>
-                        <span class="item-middle">2018.10.11</span>
-                        <span class="item-footer">周三</span>
-                    </div>
-                </div>
-            <div class="search-item">
-                    <div class="item-text">
-
-                    </div>
-                </div>
-            <div class="search-item">
-                    <div class="item-text">
-
-                    </div>
-                </div>
-            </div>
-            <div class="search-link">
-            <div class="link-button">搜 索 ></div>
-        </div>
-        </div> -->
+      
         <router-view></router-view>
     </div>
 </template>
 <script>
-    
+ 
+  export default{
+      components:{
+         
+      },
+
+  }  
 </script>
 <style>
 
 .nav{
-    
+    color: #fff;
     height: 1.84rem;
     background:linear-gradient(160deg,#ff5400 ,#ff9c00 );
 }
