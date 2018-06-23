@@ -35,11 +35,7 @@ export default new Router({
       path:'/hotel/:id',
       name:'酒店详情页',
       component:resolve => require(['pages/hotel/hotel-room/hotel'],resolve),
-      // children:[{
-      //   path:'hoteldetail',
-      //   name:'详情浮层',
-      //   component:hotelDetail 
-      // }]
+      
     },
     {
       path:'/sonRoom/:id',

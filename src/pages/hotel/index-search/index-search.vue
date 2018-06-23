@@ -92,7 +92,7 @@ export default {
             return formatDate(this.endTime.Date)
         },
         endWeekText:function(){
-            return endWeekText(this.endTime.Date)
+            return getWeek(this.endTime.Date)
         }
        
     },

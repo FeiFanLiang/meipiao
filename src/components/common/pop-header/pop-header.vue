@@ -1,12 +1,19 @@
 <template>
     <div class="header">
-            <i class="icon-arrow"> </i>
-            <span class="popup-title">酒店详情</span>
+            <i class="icon-arrow" @click="hide"> </i>
+            <span class="popup-title">
+                <slot></slot>
+            </span>
     </div>
 </template>
 <script>
 export default {
-    
+   
+    methods:{
+        hide(){
+            this.$emit('hide',false)
+        }
+    }
 }
 </script>
 <style>

@@ -1,9 +1,13 @@
 <template>
-    <button class="order-btn">预 订</button>
+    <button class="order-btn" @click="goPay">预 订</button>
 </template>
 <script>
 export default {
-    
+    methods:{
+        goPay(){
+            this.$router.push({name:"订单支付页面"})
+        }
+    }
 }
 </script>
 <style>
