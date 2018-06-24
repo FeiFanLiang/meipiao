@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import { Button } from 'vant' 
+import BScroll from 'better-scroll'
 Vue.config.productionTip = false
 
 // Vue.component('Button',Button)

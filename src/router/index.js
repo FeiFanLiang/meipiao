@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from 'pages/index/index'
-import hotel from 'pages/hotel/index'
-import search from 'pages/search/index'
+import { resolve } from 'url';
+
+
 Vue.use(Router)
 const views =  Vue.component('views',{template:'<router-view></router-view>'})
 export default new Router({
@@ -10,17 +10,17 @@ export default new Router({
     {
       path: '/',
       redirect:'/index',
-       component:views
+      component:views
     },
     {
       path:'/index',
       name:'首页',
-      component:index,
+      component:resolve => require(['pages/hotel/hotel-index/index'],resolve),
       redirect:'/index/hotel',
       children:[{
         name:'酒店搜索页',
         path:'hotel',
-        component:hotel
+      component:resolve => require(['pages/hotel/index-search/index-search'],resolve),
       },
       
       
@@ -29,7 +29,28 @@ export default new Router({
     {
       path:'/search',
       name:'搜索结果页',
-      component:search
+      component:resolve => require(['pages/hotel/hotel-search/search'],resolve)
+    },
+    {
+      path:'/hotel/:id',
+      name:'酒店详情页',
+      component:resolve => require(['pages/hotel/hotel-room/hotel'],resolve),
+      // children:[{
+      //   path:'hoteldetail',
+      //   name:'详情浮层',
+      //   component:hotelDetail 
+      // }]
+    },
+    {
+      path:'/sonRoom/:id',
+      name:'酒店子房型详情页',
+      component:resolve => require(['pages/hotel/hotel-sonroom/hotel-room'],resolve),
+     
+    },
+    {
+      path:'/pay',
+      name:'订单支付页面',
+      component:resolve => require(['pages/pay/pay'],resolve)
     }
     
   ]
