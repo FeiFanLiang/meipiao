@@ -1,5 +1,7 @@
 <template>
-    <div class="container">
+    <div class="scrollwrap">
+    <div class="scroll" ref="scroll">
+    <div class="container" ref="wraper">
         <div class="search-details-wrap">
             <div class="search-details">
                 <div class="details-text">
@@ -8,7 +10,7 @@
                     <span class="deatils-num">人数：5人 房间：3间</span>
                 </div>
                 <div class="edit-button">
-                    <button class="edit-btn">编 辑</button>
+                    <button class="edit-btn" @click="back">编 辑</button>
                 </div>
             </div>
             
@@ -25,32 +27,71 @@
             <HotelList></HotelList>
         </div>
         <Fiter v-show="fiterShow"></Fiter>
-        <Loading v-if="loading"></Loading>
+        <Loading v-show="loading"></Loading>
     </div>
+   </div>
+   </div>
 </template>
 <script>
 import { Search } from 'vant'
 import HotelList from '@/components/hotel-list/hotel-list'
 import Fiter from 'pages/hotel/hotel-search/search-fiter'
 import Loading from '@/components/common/loading/loading'
+import LoadMore from '@/components/common/load-more/load-more' 
+import BScroll from 'better-scroll'
 export default {
     components:{
         Search,
         HotelList,
         Fiter,
-        Loading
+        Loading,
+        LoadMore
 
     },
     data(){
         return{
             fiterShow:false,
             loading:false,
-
+          
         }
+    },
+    methods:{
+        back(){
+            this.$router.go(-1)
     }
+    },
+    mounted(){
+        setTimeout(() => {
+            this.scroll = new BScroll(this.$refs.scroll,{
+                pullUpLoad:{
+                    threshold:50
+                },
+                scrollY: true
+            })
+           
+        }, 20);
+        
+    },
+    created(){
+        
+    }
+
+     
 }
+
 </script>
 <style>
+    .scrollwrap{
+        position: fixed;
+        top: 1rem;
+        left: 0;
+        right: 0;
+        bottom:0;
+    }
+    .scroll{
+        height: 100%;
+        overflow: hidden;
+    }
     /* 头部搜索条件 */
     .search-details-wrap{
         

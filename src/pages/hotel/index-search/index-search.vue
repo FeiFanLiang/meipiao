@@ -86,13 +86,13 @@ export default {
          return formatDate(this.beginTime.Date) 
         },
         beginWeekText:function(){
-        return getWeek(this.beginTime.Date)
+        return formatDate(this.beginTime.Date)
         },
         endDateText:function(){
             return formatDate(this.endTime.Date)
         },
         endWeekText:function(){
-            return endWeekText(this.endTime.Date)
+            return formatDate(this.endTime.Date)
         }
        
     },
