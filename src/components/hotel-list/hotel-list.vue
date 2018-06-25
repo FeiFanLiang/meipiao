@@ -1,22 +1,25 @@
 <template>
     <div class="hotel-list">
-        <div class="list-item" @click="getDetail">
-            <div class="hotel-img"></div>
+        
+        <div class="list-item" @click="getDetail" v-for="item in hotelList">
+            <div class="hotel-img">
+                <img :src="item.HotelImg" alt="">
+            </div>
             <div class="hotel-detail">
                 <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
+                    <span>{{item.HotelName}}( {{item.HotelName_En}} )</span>
                 </div>
                 <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
+                    <Rate :size="18" v-model="num" :count="item.HotelRate" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
                     <div class="item-price">
                         <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
+                        <span class="price-num">{{item.HotelPrice}}</span>
                         <span class="price-add">起</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="list-item" @click="getDetail">
+        <!-- <div class="list-item" @click="getDetail">
             <div class="hotel-img"></div>
             <div class="hotel-detail">
                 <div class="item-title">
@@ -159,7 +162,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="pull-update">
             <span>加载更多...</span>
         </div>
@@ -171,9 +174,16 @@ export default {
     components:{
         Rate
     },
+    props:{
+        list:{
+            type:Array,
+            default:[]
+        }
+    },
     data(){
         return{
-            num:5
+            num:5,
+            hotelList:''
         }
     },
     methods:{
@@ -182,7 +192,8 @@ export default {
        }
     },
     mounted(){
-        
+        this.hotelList = this.list
+        console.log(this.hotelList)
     }
 }
 </script>
@@ -202,7 +213,7 @@ export default {
     width: 1.5rem;
     height: 1.5rem;
     
-    background-color: blue;
+    /* background-color: blue; */
 }
 .hotel-list .hotel-detail{
     position: relative;

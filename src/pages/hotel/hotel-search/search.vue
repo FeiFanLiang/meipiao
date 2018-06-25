@@ -25,7 +25,7 @@
             </div>
             <div class="hotel-list-wrap">
                 <div class="scroll-wrap" ref="scrollWrap">
-                <HotelList></HotelList>
+                <HotelList v-if="hotelList" :list="hotelList"></HotelList>
                 </div>
             </div>
             <Fiter :popshow="fiterShow" @hide="hide"></Fiter>
@@ -53,11 +53,11 @@ export default {
         return{
             fiterShow:false,
             loading:false,
-          
+            hotelList:''
         }
     },
     created(){
-        console.log(this.$route.query)
+        this.initList()
     },
     mounted(){
         setTimeout(() => {
@@ -75,6 +75,17 @@ export default {
         },
         hide(value){
             this.fiterShow = value 
+        },
+        async getHotelList(query){
+            const res = await hotelBase.getList(query)
+            if(res.status == 200 && res.data.data.Data){
+                this.hotelList = res.data.data.Data
+            }
+              
+        },
+        initList(){
+            const query = this.$route.query
+            this.getHotelList(query)
         }
         
     }
