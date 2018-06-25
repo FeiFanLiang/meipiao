@@ -1,43 +1,43 @@
 <template>
-    <div class="scrollwrap">
-    <div class="scroll" ref="scroll">
-    <div class="container" ref="wraper">
-        <div class="search-details-wrap">
-            <div class="search-details">
-                <div class="details-text">
-                    <span class="details-title">青岛,中国</span>
-                    <span class="details-date">入住：10月10日周二 离店：10月11日周三</span>
-                    <span class="deatils-num">人数：5人 房间：3间</span>
+    <div class="container">
+        
+            
+            <div class="search-details-wrap">
+                <div class="search-details">
+                    <div class="details-text">
+                        <span class="details-title">青岛,中国</span>
+                        <span class="details-date">入住：10月10日周二 离店：10月11日周三</span>
+                        <span class="deatils-num">人数：5人 房间：3间</span>
+                    </div>
+                    <div class="edit-button">
+                        <button class="edit-btn" @click="back">编 辑</button>
+                    </div>
                 </div>
-                <div class="edit-button">
-                    <button class="edit-btn" @click="back">编 辑</button>
+                
+            </div>
+            <div class="hotel-filt">
+                    <div class="hotel-input">
+                        <Search placeholder="请输入酒店名称"></Search>
+                    </div>
+                    <div class="filt-more" @click="show">
+                        <span>更多条件筛选>></span>                    
+                    </div>
+            </div>
+            <div class="hotel-list-wrap">
+                <div class="scroll-wrap" ref="scrollWrap">
+                <HotelList></HotelList>
                 </div>
             </div>
-            
-        </div>
-        <div class="hotel-filt">
-                <div class="hotel-input">
-                    <Search placeholder="请输入酒店名称"></Search>
-                </div>
-                <div class="filt-more">
-                    <span>更多条件筛选>></span>                    
-                </div>
-        </div>
-        <div class="hotel-list-wrap">
-            <HotelList></HotelList>
-        </div>
-        <Fiter v-show="fiterShow"></Fiter>
-        <Loading v-show="loading"></Loading>
-    </div>
-   </div>
-   </div>
+            <Fiter :popshow="fiterShow" @hide="hide"></Fiter>
+            <Loading v-if="loading"></Loading>
+            </div>
+    
 </template>
 <script>
 import { Search } from 'vant'
 import HotelList from '@/components/hotel-list/hotel-list'
 import Fiter from 'pages/hotel/hotel-search/search-fiter'
 import Loading from '@/components/common/loading/loading'
-import LoadMore from '@/components/common/load-more/load-more' 
 import BScroll from 'better-scroll'
 export default {
     components:{
@@ -45,7 +45,7 @@ export default {
         HotelList,
         Fiter,
         Loading,
-        LoadMore
+        // LoadMore
 
     },
     data(){
@@ -55,41 +55,54 @@ export default {
           
         }
     },
-    methods:{
-        back(){
-            this.$router.go(-1)
-    }
-    },
     mounted(){
         setTimeout(() => {
-            this.scroll = new BScroll(this.$refs.scroll,{
-                pullUpLoad:{
-                    threshold:50
-                },
-                scrollY: true
+            this.scroll = new BScroll(this.$refs.scrollWrap,{
+                click:true
             })
-           
         }, 20);
-        
     },
-    created(){
+    methods:{
+        back(){
+            this.$router.push({name:'酒店搜索页'})
+        },
+        show(){
+            this.fiterShow = true
+        },
+        hide(value){
+            this.fiterShow = value 
+        }
         
     }
+    }
+   
 
      
-}
+
 
 </script>
 <style>
-    .scrollwrap{
+/* .scroll-container{
+    position: fixed;
+    top: 1rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+    .scroll-wrap{
+        height: 100%;
+        overflow: hidden;
+    } */
+    .hotel-list-wrap{
         position: fixed;
-        top: 1rem;
+        top: 3.15rem;
+        bottom: 0;
         left: 0;
         right: 0;
-        bottom:0;
     }
-    .scroll{
+    .hotel-list-wrap .scroll-wrap{
         height: 100%;
+       
         overflow: hidden;
     }
     /* 头部搜索条件 */
@@ -158,11 +171,13 @@ export default {
         flex: 1;
 
     }
-    .filt-more{
-    
+    .hotel-filt .filt-more{
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
        margin-left: 0.27rem;
        font-size: 0.14rem;
-       line-height: 0.14rem;
+       
        color: #0879e3;
 
     }

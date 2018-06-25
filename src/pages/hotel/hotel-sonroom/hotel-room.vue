@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="sonroom-detail">
-           <span class="detail-link">查看房间详情</span>
+           <span class="detail-link" @click="showPop">查看房间详情</span>
         </div>
         <div class="sonroom-list-wrap">
             <SonRoomList></SonRoomList>
@@ -32,7 +32,26 @@
         <div class="loading-more">
             <span>查看更多客房类型</span>
         </div>
-        <SonRoomPop v-if="popshow"></SonRoomPop>
+        <PopPage @hide="hide" v-show="popShow" class="sonroom-pop">
+            <template slot="title">
+                豪华海景房
+            </template>
+            <template slot="content">
+                <div class="pop-content">
+                    <div class="genera">2张双人床 或 1张特大床房间面积40平方米,可欣赏海景</div>
+                    <div class="detail-list">
+                        <ul>
+                            <li>
+                                <span class="list-title">网络:</span>免费WIFI
+                            </li>
+                            <li>
+                                <span class="list-title">网络:</span>免费WIFI
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            </template>
+        </PopPage>
     </div>
 </template>
 
@@ -40,18 +59,27 @@
 import Slider from '@/components/common/slider/slider'
 import OrderBtn from '@/components/common/order-btn/order-btn'
 import SonRoomList from '@/components/room-list/sonRoom-list'
-import SonRoomPop from 'pages/hotel/hotel-pop/sonroom-detail'
+import PopPage from 'pages/hotel/hotel-pop/detail-pop'
 export default {
     components:{
         Slider,
         OrderBtn,
         SonRoomList,
-        SonRoomPop
+        PopPage
 
     },
     data(){
         return{
-            popshow:false
+            popShow:false
+        }
+    },
+    methods:{
+        
+        showPop(){
+            this.popShow = true
+        },
+        hide(value){
+            this.popShow = value
         }
     }
 }
@@ -139,5 +167,29 @@ export default {
        font-size: 0.24rem;
        color: #fff;
    }
+   /* 浮层样式 */
+   .sonroom-pop .pop-content{
+        padding: 0.48rem 0 0 0.44rem;
+        font-size: 0.2rem;
+        line-height: 0.275rem;
+        color: #4a4949;
+    }
+    .sonroom-pop .pop-content{
+        padding: 0.48rem 0 0 0.44rem;
+        font-size: 0.2rem;
+        line-height: 0.275rem;
+        color: #4a4949;
+    }
+    .pop-content .genera{
+        width: 2.84rem;
+        margin-bottom: 0.5rem;
+    }
+    .detail-list .list-title{
+        color: #ff5400;
+        font-size: 0.2rem;
+    }
+    .detail-list ul li{
+        margin-bottom: 0.15rem;
+    }
 </style>
 

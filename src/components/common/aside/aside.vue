@@ -125,7 +125,7 @@ export default {
     margin-bottom: 0.58rem;
 }
 
-.list-item>div{
+.menu-list .list-item>div{
     display: flex;
     align-items: center;
 

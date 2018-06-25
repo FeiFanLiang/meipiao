@@ -1,13 +1,35 @@
 <template>
     <div class="room-list">
-        <div class="list-item">
+        <div class="list-item" @click="goRoomPages">
             <div class="room-img"></div>
             <div class="room-detail">
                 <div class="room-name">豪华家庭房</div>
                 <div class="room-policy">大床 双早</div>
                 <div class="room-disp">免费WIFI</div>
                 <div class="room-price">
-                    <span class="price-symbol">¥</span><span class="price-num">980</span>
+                    <span class="price-symbol">¥</span><span class="price-num"> 980</span>
+                </div>
+            </div>
+        </div>
+         <div class="list-item">
+            <div class="room-img"></div>
+            <div class="room-detail">
+                <div class="room-name">豪华家庭房</div>
+                <div class="room-policy">大床 双早</div>
+                <div class="room-disp">免费WIFI</div>
+                <div class="room-price">
+                    <span class="price-symbol">¥</span><span class="price-num"> 980</span>
+                </div>
+            </div>
+        </div>
+         <div class="list-item">
+            <div class="room-img"></div>
+            <div class="room-detail">
+                <div class="room-name">豪华家庭房</div>
+                <div class="room-policy">大床 双早</div>
+                <div class="room-disp">免费WIFI</div>
+                <div class="room-price">
+                    <span class="price-symbol">¥</span><span class="price-num"> 980</span>
                 </div>
             </div>
         </div>
@@ -15,13 +37,27 @@
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+
+        }
+    },
+    methods:{
+        goRoomPages(){
+            this.$router.push({path:'/sonRoom/:12341'})
+        }
+    }
 }
 </script>
 <style>
-.list-item{
+.room-list{
+    padding: 0 0.14rem 0 0.13rem;
+}
+.room-list .list-item{
     display: flex;
     height: 1.5rem;
+    margin-bottom: 0.4rem;
+    border: 0.01rem solid #e6e6e6;
 }
     .room-img{
         width: 1.94rem;
@@ -51,6 +87,7 @@ export default {
     }
     .room-disp{
         color: #0c9306;
+        line-height: 0.19rem;
     }
     .room-detail .room-price{
         position: absolute;

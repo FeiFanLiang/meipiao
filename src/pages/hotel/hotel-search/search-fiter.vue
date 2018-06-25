@@ -1,7 +1,7 @@
 <template>
-    <div class="fiter-container">
+    <div class="fiter-container" v-show="show">
         <div class="fiter-header">
-            <div class="fiter-back">
+            <div class="fiter-back" @click="hide">
                 <span>取消</span>
             </div>
             <div class="header-title">
@@ -80,22 +80,40 @@ export default {
         // Radio,
         
     },
+    props:{
+        popshow:{
+            type:Boolean,
+            default:false
+        }
+    },
     data(){
         return{ 
             Radio:{
                 name:''
-            }
+            },
+            show:''
 
         }
     },
+    
     methods:{
-        show(){
-            console.log(this.Radio.name)
+       hide(){
+           this.show = false
+            this.$emit('hide',false)
+       }
+    },
+    // computed:{
+    //     show:function(){
+    //         return this.popshow
+    //     }
+    // },
+    watch:{
+        popshow:function(value){
+            this.show = value
+            console.log(this.show)
         }
     },
-    computed:{ 
-       
-    }
+    
 }
 </script>
 <style>

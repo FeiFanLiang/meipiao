@@ -14,14 +14,15 @@
         <div class="hotel-detail">
             <h2 class="hotel-name">青岛海景花园大酒店(Qingdao Seaview Garden Hotel)</h2>
             <div class="hotel-location">
-                <i class="icon-location"></i>
+                
+                <Icon name="location" color="#b70500" class="icon-location"/>
                 <span>青岛市市南区彰化路2号</span>
                 <span class="location-map">地图 >></span>
             </div>
             <div class="order-time">
                 <span>10月10日周二至10月11日周三</span>
                 <div class="edit-button">
-                    <button class="edit-btn">编 辑</button>
+                    <button class="edit-btn" @click="editFiter">编 辑</button>
                 </div>
             </div>
             <div class="minimum-price">
@@ -33,42 +34,147 @@
 
             </div>
             <div class="order-button">
-                <button class="order-btn">预 订</button>
+                <button class="order-btn" @click="goPay">预 订</button>
             </div>
         </div>
         <div class="detail-more">
-            <span class="detail-link">查看酒店详情</span>
+            <span class="detail-link" @click="showPop">查看酒店详情</span>
         </div>
         <div class="hotel-room">
             <div class="list-title">
                 <span>其他房型</span>
             </div>
+            <div class="scroll-wrap">
+            <div class="scroll" ref="scrollWrap">
             <RoomList></RoomList>
+            </div>
+            </div>
         </div>
         <div class="pull-update">
-             <span>加载更多...</span>
+             
         </div>
-        <router-view></router-view>
+        <PopPage class="popup-container" v-show="popShow" @hide="hide">
+            <template slot="title">
+                酒店详情
+            </template>
+            <template slot="content">
+                <div class="detail-content">
+                    <tabs v-model="active" :lineWidth= 0.1 :duration=0>
+                        <tab title="酒店设施">
+                            <div slot="title">
+                                <span class="tab-item">酒店设施</span>
+                            </div>
+                            <div class="content-wrap">
+                                <div class="content-item">
+                                <span class="content-title">主要设施</span>
+                                <div class="content-desc">
+                                    免费WIFI 2间餐厅 室外游泳池 健身中心 SPA服务 供应早餐 会议中心 空调 每日客房清洁服务
+                                    </div> 
+                                </div>
+                                <div class="content-item">
+                                <span class="content-title">饮食选择</span>
+                                <div class="content-desc">
+                                    每天提供自助式早餐 2间餐厅 酒吧 咖啡馆 24小时客房送餐服务
+                                    </div> 
+                                </div>
+                            </div>
+                        </tab>
+                        <tab title="客房设施">
+                            <div slot="title">
+                                <span class="tab-item">客房设施</span>
+                            </div>
+                            <div class="item-content">
+
+                            </div>
+                        </tab>
+                        <tab title="关键咨询">
+                            <div slot="title">
+                                <span class="tab-item">关键资讯</span>
+                            </div>
+                            <div class="item-content">
+
+                            </div>
+                        </tab>
+                        <tab title="注意事项">
+                            <div slot="title">
+                                <span class="tab-item">注意事项</span>
+                            </div>
+                            <div class="item-content">
+                                
+                            </div>
+                        </tab>
+                    </tabs>
+                </div>
+            </template>
+        </PopPage>
     </div>
 </template>
 <script>
 import { Swipe, SwipeItem } from 'vant'
+import BScroll from 'better-scroll'
 import RoomList from '@/components/room-list/room-list'
+import PopPage from 'pages/hotel/hotel-pop/detail-pop'
+import { Tab, Tabs } from 'vant'
 export default {
     components:{
         Swipe,
         SwipeItem,
-        RoomList
+        RoomList,
+        PopPage,
+        Tab,
+        Tabs
+    },
+    data(){
+        return{
+            popShow:false,
+            active: 0,
+            width:0,
+        }
+    },
+    mounted(){
+        setTimeout(() => {
+            this.scroll = new BScroll(this.$refs.scrollWrap,{
+                click:true
+            })
+        }, 300);
+    },
+    methods:{
+        showPop(){
+            this.popShow = true
+           
+        },
+        hide(value){
+            this.popShow = value
+            
+        },
+        editFiter(){
+            this.$router.push({name:'酒店搜索页'})
+        },
+        goPay(){
+            this.$router.push({name:'订单支付页面'})
+        }
     }
 }
 </script>
 <style>
+.hotel-room .scroll-wrap{
+    position: fixed;
+    top: 9.02rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.scroll-wrap .scroll{
+    height: 100%;
+    overflow: hidden;
+}
     .top-slider{
         position: relative;
         height: 3.67rem;
         background-color: aqua;
 
-    }
+    }   
+    
     .slider-index{
         position: absolute;
         display: flex;
@@ -114,6 +220,8 @@ export default {
         width: 0.18rem;
         height: 0.23rem;
         margin-right: 0.15rem;
+        font-size: 0.23rem;
+        line-height: 0.23rem;
     }
     .location-map{
         margin-left: 0.27rem;
@@ -207,5 +315,68 @@ export default {
     font-size: 0.16rem;
     color: #3f3b3a;
 }
+/* 浮层样式 */
+.popup-title{
+        font-size: 0.3rem;
+        line-height: 0.3rem;
+        color: #fff;
+    }
+    .detail-content .van-tabs--line{
+        padding-top: 0.86rem;
+    }
+    .detail-content .van-tab--active{
+        color: #ff5400;
+    }
+    .detail-content .van-tab--active .tab-item{
+         border-bottom: 0.03rem solid #ff5400;
+    }
+    .detail-content .van-tabs--line .van-tabs__wrap{
+        height: 0.86rem;
+        border-bottom: 0.01rem solid #e6e6e6;
+    }
+    .detail-content .van-tab{
+        font-size: 0.2rem;
+        padding: 0;
+    }
+    .van-tab{
+        line-height: 0;
+    }
+    .van-tabs__nav--line{
+        padding-bottom: 0.2rem;
+    }
+    .van-tab .tab-item{
+        width: 0.92rem;
+        
+        padding-bottom: 0.14rem;
+        line-height: 0.2rem;
+       
+        margin: 0.3rem auto 0;
+    }
+    
+    .content-wrap{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.09rem;
+        border-top: 0.01rem solid #e6e6e6;
+        padding: 0.34rem 0 0 0.44rem;
+        
+    }
+    
+    .content-item{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.36rem;
+
+    }
+    .content-title{
+        font-size: 0.2rem;
+        color: #4a4949;
+        margin-bottom: 0.3rem;
+    }
+    .content-desc{
+        width: 72.31%;
+        font-size: 0.18rem;
+        color: #828282;
+    }
 </style>
 
