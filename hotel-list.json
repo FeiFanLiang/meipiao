@@ -1,0 +1,390 @@
+
+{
+    "data":{
+        "Total":30,
+        "CountPage":3,
+        "pageIndex":1,
+        "query":{"ID":"","HotelName":"青岛","HotelName_En":"","FrontPhone":"","City":"","Country":"","IsDelete":false},
+        "Data":[{
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+        },{
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+        },{
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+},
+{
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+        },{
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+        },{
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+},
+{
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+        },{
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+        },{
+            "HotelImg":"https://imgchr.com/i/PCm6iQ",
+            "HotelName":"青岛海景花园大酒店",
+            "HotelID":"12345",
+            "HotelName_En":"Qingdao Seaview Graden Hotel",
+            "HotelPrice":800,
+            "HotelRate":5
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海尔洲际大酒店",
+            "HotelID":"54321",
+            "HotelName_En":"InterContinental QingDao",
+            "HotelPrice":1200,
+            "HotelRate":4
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛海泉湾维景国际大酒店",
+            "HotelID":"77452",
+            "HotelName_En":"Grand Metropark Hotel Qingdao",
+            "HotelPrice":1100,
+            "HotelRate":3
+        },
+        {
+            "HotelImg":"https://imgchr.com/i/PCmsIg",
+            "HotelName":"青岛香格里拉大酒店",
+            "HotelID":"77120",
+            "HotelName_En":"Shangri-La Hotel, Qingdao",
+            "HotelPrice":1500,
+            "HotelRate":1
+}
+]
+    },
+    "status":200,
+    "statusText":"OK"
+}

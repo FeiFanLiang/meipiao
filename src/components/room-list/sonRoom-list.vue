@@ -45,6 +45,9 @@ import OrderBtn from '@/components/common/order-btn/order-btn'
 export default {
     components:{
         OrderBtn
+    },
+    methods:{
+       
     }
 }
 </script>

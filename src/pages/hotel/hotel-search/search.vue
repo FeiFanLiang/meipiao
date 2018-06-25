@@ -34,11 +34,12 @@
     
 </template>
 <script>
-import { Search } from 'vant'
+import { Search, ImagePreview } from 'vant'
 import HotelList from '@/components/hotel-list/hotel-list'
 import Fiter from 'pages/hotel/hotel-search/search-fiter'
 import Loading from '@/components/common/loading/loading'
 import BScroll from 'better-scroll'
+import {hotelBase} from 'api'
 export default {
     components:{
         Search,
@@ -53,6 +54,9 @@ export default {
             loading:false,
 
         }
+    },
+    created(){
+        console.log(this.$route.query)
     },
     mounted(){
         setTimeout(() => {
@@ -94,7 +98,7 @@ export default {
         left: 0;
         right: 0;
     }
-    .scroll-wrap{
+    .hotel-list-wrap .scroll-wrap{
         height: 100%;
         /* max-height: 1300px; */
         overflow: hidden;

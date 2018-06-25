@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="nav-warp">
+        <div class="nav-wrap">
             <div class="nav">
                 <div class="nav-panels">
                     <router-link tag="div" class="nav-items" to="./ticket">
@@ -43,10 +43,12 @@
 </script>
 <style>
 
-.nav{
+
+.nav-wrap .nav{
     color: #fff;
     height: 1.84rem;
-    background:linear-gradient(160deg,#ff5400 ,#ff9c00 );
+    background-image: url('./head-content.jpg');
+    background-size: 100%;
 }
 .nav-panels{
     display: flex;
@@ -67,35 +69,15 @@
     width: 0.46rem;
     height: 0.34rem;
     margin-right: 0.14rem;
-    background: url('./icon.png') no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+  
 }
-.nav-items .icon-ticket{
-    background-position:0px 0px;
-}
-.nav-items .icon-hotel{
-    background-position: 0px -36px;
-}
-.nav-items .icon-rental{
-    background-position: 0px -72px;
-}
-.nav-items .icon-holiday{
-    background-position: 0px -108px;
-}
+
 .router-link-active span{
     color: #8d3800;
 }
-.router-link-active .icon-ticket{
-    background-position: -46px 0px;
-}
-.router-link-active .icon-hotel{
-    background-position: -46px -36px;
-}
-.router-link-active .icon-rental{
-    background-position: -46px -72px;
-}
-.router-link-active .icon-holiday{
-    background-position: -46px -108px;
-}
+
 .nav-search{
     padding: 0.38rem 0 0.34rem;
 }
@@ -113,93 +95,56 @@
     padding-left: 0.19rem;
     background:rgba(255,255,255, 0.2)
 }
-/* .hotel-search{
-    width: 100%;
-   
-    
+/* TAB栏图标 */
+.icon-ticket{
+    background-image: url('./icon2x/ticket@2x.png')
 }
-.search-group{
-    display: flex;
-
- 
-    width: 84.37%;
-    margin: 0.34rem auto 0;
-   
-    flex-wrap: wrap;
+.icon-hotel{
+    background-image: url('./icon2x/hotel@2x.png')
 }
-
-
-.search-item{
-    position: relative;
-    width: 46.29%;
-    padding-top: 46.29%;
-     */
-    
-/* }
-.search-item:nth-child(1),.search-item:nth-child(3){
-    margin-right: 0.4rem;
+.icon-rental{
+    background-image: url('./icon2x/rental@2x.png')
 }
-.search-item:nth-child(1),.search-item:nth-child(2){
-    margin-bottom: 0.3rem;
+.icon-holiday{
+    background-image: url('./icon2x/travel@2x.png')
 }
-.search-item:nth-child(1),.search-item:nth-child(4){
-    background:linear-gradient(160deg,#ff5400 ,#ff9c00 );
+.router-link-active .icon-ticket{
+    background-image: url('./icon2x/ticket-active@2x.png')
 }
-.search-item:nth-child(2) .item-title,.search-item:nth-child(3) .item-title{
-    color: #474747;
+.router-link-active .icon-hotel{
+    background-image: url('./icon2x/hotel-active@2x.png')
 }
-.search-item:nth-child(2),.search-item:nth-child(3){
-    color: #ff6600;
+.router-link-active .icon-rental{
+    background-image: url('./icon2x/rental-active@2x.png')
 }
-.search-item:nth-child(2) .icon-corner,.search-item:nth-child(3) .icon-corner{
-    border-color: #ff6600;
+.router-link-active .icon-holiday{
+    background-image: url('./icon2x/travel-active@2x.png')
 }
-.item-text{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    font-size: 0.4rem;
-    padding: 0.28rem 0 0 0.22rem;
-   
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+      .icon-ticket{
+    background-image: url('./icon3x/ticket@3x.png')
 }
-.item-title{
-    margin-bottom: 0.37rem;
+.icon-hotel{
+    background-image: url('./icon3x/hotel@3x.png')
 }
-.item-middle{
-    margin-bottom: 0.33rem;
+.icon-rental{
+    background-image: url('./icon3x/rental@3x.png')
 }
-.item-text .item-footer{
-    font-size: 0.25rem;
+.icon-holiday{
+    background-image: url('./icon3x/travel@3x.png')
 }
-.item-text i {
-    position: absolute;
-    bottom: 0.13rem;
-    right: 0.12rem;
-    width: 0.19rem;
-    height: 0.19rem;
-    box-sizing: border-box;
+.router-link-active .icon-ticket{
+    background-image: url('./icon3x/ticket-active@3x.png')
 }
-.icon-corner{   
-    border-width: 0 0.05rem 0.05rem 0;
-    border-style: solid;
-    border-color: #fff;
-} */
-/* .search-link{
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
-    
+.router-link-active .icon-hotel{
+    background-image: url('./icon3x/hotel-active@3x.png')
 }
-.link-button{
-    
-    font-size: 0.3rem;
-    color: #ff6600;
-    text-decoration: underline;
-} */
+.router-link-active .icon-rental{
+    background-image: url('./icon3x/rental-active@3x.png')
+}
+.router-link-active .icon-holiday{
+    background-image: url('./icon3x/travel-active@3x.png')
+}
+  }
 </style>
 

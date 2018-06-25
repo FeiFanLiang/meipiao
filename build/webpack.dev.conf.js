@@ -9,7 +9,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
-
+const express = require('express')
+const app = express()
+const hotelList =require('../static/mock/hotel-list.json')
+const apiRouter = express.Router()
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -42,6 +45,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
+    },
+    before(apiRouter){
+        apiRouter.get('/api/hotel-search',(req,res)=>{
+          res.json({
+            data:hotelList
+          })
+        })
     }
   },
   plugins: [

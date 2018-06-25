@@ -40,10 +40,10 @@
             <div class="link-button" @click="searchRoute">搜 索 ></div>
             
         </div>
-        <div class="bottom-pop" v-show="popShow">
+        <div class="bottom-pop" v-if="popShow">
             <DatetimePicker  type="date" cancel-button-text=" " v-model="beginTime.Date" @confirm="closePicker"  :item-height="88" :min-date="beginTime.minDate" :max-date="beginTime.maxDate" v-show="beginTime.show"></DatetimePicker>
             <DatetimePicker type="date" cancel-button-text=" " v-model="endTime.Date" @confirm="closePicker" :item-height="88" :min-date="endTime.minDate" :max-date="endTime.maxDate" v-show="endTime.show"></DatetimePicker>
-            <Picker show-toolbar  :columns="numList"  @confirm="pickNum" v-show="numPickershow" cancel-button-text=" "/>
+            <Picker show-toolbar  :columns="numList" :title="peopleCountcheck?'选择人数':'选择房间数'" @confirm="pickNum" v-show="numPickershow" cancel-button-text=" " />
            
         </div>
         
@@ -52,6 +52,7 @@
 <script>
 import { DatetimePicker, Picker } from 'vant'
 import {formatDate,getWeek} from 'commonjs/common.js'
+
 const currentDay = new Date()
 export default {
     components:{
@@ -98,9 +99,18 @@ export default {
     },
     methods:{
         searchRoute(){
-            this.$router.push({name:'搜索结果页'})
+            //  console.log('1')
+            const query = {
+                BeginTime:this.beginDateText,
+                EndTime:this.beginDateText,
+                PeopleNum:this.peopleCount,
+                RoomNum:this.roomCount
+            }
+            console.log(query.BeginTime)
+             this.$router.push({name:'搜索结果页',query:query})
         },
         datePickshow(dateObj){
+            this.closePicker()
             dateObj.show = true
             this.popShow = true 
         },
@@ -110,8 +120,11 @@ export default {
             this.beginTime.show = false
             this.endTime.show = false
             this.popShow = false
+            this.numPickershow=false
         },
         openNumpick(num){
+            this.closePicker()
+            
             this.popShow = true
             this.numPickershow = true
             if(num == 0){
@@ -243,6 +256,9 @@ export default {
 
 .van-picker-column{
     font-size: 0.32rem;
+}
+.hotel-search .van-picker__title{
+    color: #303030;
 }
 </style>
 
