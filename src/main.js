@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import { Icon } from 'vant' 
-// import BScroll from 'better-scroll'
+
+
+
 Vue.component('Icon',Icon)
 Vue.config.productionTip = false
 // Vue.use(BScroll)

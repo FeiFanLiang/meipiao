@@ -31,6 +31,7 @@ module.exports = {
       'pages':resolve('src/pages'),
       'hotel':resolve('src/pages/hotel'),
       'commonjs':resolve('src/common/js'),
+      'api':resolve('src/api')
     }
   },
   module: {

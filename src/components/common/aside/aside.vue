@@ -62,7 +62,7 @@ export default {
     },
     data(){
         return{
-            login:false,
+            login:true,
             show:false
         }
     }
@@ -114,7 +114,9 @@ export default {
     top: 0.55rem;
     width: 1.2rem;
     height: 1.08rem;
-    background: url('./aside-log.png') no-repeat;
+    background-image: url('./icon2x/aside-log@2x.png');
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .menu-list{
     padding-top: 2.35rem;
@@ -138,20 +140,20 @@ export default {
     margin-right: 0.26rem;
 }
 .icon-user{
-    background-image: url('./data.png');
+    background-image: url('./icon2x/data@2x.png');
     
 }
 .icon-order{
-    background-image: url('./drafts.png');
+    background-image: url('./icon2x/drafts@2x.png');
 }
 .icon-msg{
-    background-image: url('./message.png');
+    background-image: url('./icon2x/message@2x.png');
 }
 .icon-service{
-    background-image: url('./call.png');
+    background-image: url('./icon2x/call@2x.png');
 }
 .icon-logout{
-    background-image: url('./exit.png');
+    background-image: url('./icon2x/exit@2x.png');
 }
 .no-login{
     padding-right: 15%;
@@ -193,6 +195,27 @@ export default {
     color: #7b2901;
     height: 0.65rem;
 
+}
+@media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+    .icon-user{
+    background-image: url('./icon3x/data@3x.png');
+    
+}
+.icon-order{
+    background-image: url('./icon3x/drafts@3x.png');
+}
+.icon-msg{
+    background-image: url('./icon3x/message@3x.png');
+}
+.icon-service{
+    background-image: url('./icon3x/call@3x.png');
+}
+.icon-logout{
+    background-image: url('./icon3x/exit@3x.png');
+}
+.main-log{
+    background-image: url('./icon3x/aside-log@3x.png');
+}
 }
 </style>
 

@@ -34,11 +34,12 @@
     
 </template>
 <script>
-import { Search } from 'vant'
+import { Search, ImagePreview } from 'vant'
 import HotelList from '@/components/hotel-list/hotel-list'
 import Fiter from 'pages/hotel/hotel-search/search-fiter'
 import Loading from '@/components/common/loading/loading'
 import BScroll from 'better-scroll'
+import {hotelBase} from 'api'
 export default {
     components:{
         Search,
@@ -54,6 +55,9 @@ export default {
             loading:false,
           
         }
+    },
+    created(){
+        console.log(this.$route.query)
     },
     mounted(){
         setTimeout(() => {
