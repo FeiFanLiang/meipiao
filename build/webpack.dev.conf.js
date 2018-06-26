@@ -48,9 +48,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     },
     before(apiRouter){
         apiRouter.get('/api/hotel-search',(req,res)=>{
-          res.json({
+          setTimeout(() => {
+            res.json({
             data:hotelList
           })
+          }, 1000);
+          
         })
     }
   },

@@ -24,11 +24,11 @@
                     </div>
             </div>
             <div class="hotel-list-wrap">
-                <div class="scroll-wrap" ref="scrollWrap">
-                <HotelList v-if="hotelList" :list="hotelList"></HotelList>
+                <div class="scroll-wrap" ref="scrollWrap" v-if="demoList.length>0">
+                <HotelList :list="demoList" :loading="upload"></HotelList>
                 </div>
             </div>
-            <Fiter :popshow="fiterShow" @hide="hide"></Fiter>
+            <Fiter :popshow="fiterShow" @hide="hide" @submit="seekHotelList"></Fiter>
             <Loading v-if="loading"></Loading>
             </div>
     
@@ -53,20 +53,51 @@ export default {
         return{
             fiterShow:false,
             loading:false,
-            hotelList:''
+            hotelList:'',
+            demoList:[],//上拉加载使用的demo数据,
+            pageIndex:1,//当前页码
+            pageCount:10,//当前页数量
+            query:{},
+            upload:false
         }
     },
     created(){
         this.initList()
     },
     mounted(){
-        setTimeout(() => {
-            this.scroll = new BScroll(this.$refs.scrollWrap,{
-                click:true
-            })
-        }, 20);
+      this.initScroll()
+       
     },
     methods:{
+        initScroll(){
+            setTimeout(() => {
+                if(!this.$refs.scrollWrap){
+                    return
+                }
+                this.scroll = new BScroll(this.$refs.scrollWrap,{
+                    click:true,
+                    pullUpLoad:{
+                        threshold:-300
+                    }
+                })
+                this.scroll.on('pullingUp', () => {
+                    
+                    clearTimeout(timer)
+                   var timer = null
+                   timer = setTimeout(() => {
+                       this.upload = true
+                      this.loadMore().then(()=>{
+                        this.scroll.finishPullUp()
+                       
+                    }) 
+                   }, 500);
+                    
+
+    })
+            
+            }, 20);
+        },
+       
         back(){
             this.$router.push({name:'酒店搜索页'})
         },
@@ -77,17 +108,52 @@ export default {
             this.fiterShow = value 
         },
         async getHotelList(query){
+            
             const res = await hotelBase.getList(query)
+            
             if(res.status == 200 && res.data.data.Data){
-                this.hotelList = res.data.data.Data
+                // this.hotelList = res.data.data.Data
+                const listArr = res.data.data.Data
+                this.demoList = this.demoList.concat(listArr.slice(this.pageIndex,this.pageCount))
+                // console.log(this.demoList)
             }
+            
               
         },
         initList(){
-            const query = this.$route.query
-            this.getHotelList(query)
+            this.query = this.$route.query
+            this.loading = true    
+            this.getHotelList(this.query).then(()=>{
+            this.loading = false  
+            })
+            
+            
+            
+        },
+        async loadMore(){
+            this.pageIndex++
+            
+            await this.getHotelList(this.query)
+            // this.scroll.finishPullUp()
+        },
+        async seekHotelList(radio){
+            const query = Object.assign(this.query,radio)
+            this.loading = true
+            await this.getHotelList(query)
+            this.loading = false
+
         }
         
+    },
+    watch:{
+         demoList(){
+            if(!this.scroll){
+                this.initScroll()
+                return
+            }
+            
+            this.scroll && this.scroll.refresh()
+         }
     }
     }
    

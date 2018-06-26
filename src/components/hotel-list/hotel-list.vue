@@ -164,7 +164,7 @@
             </div>
         </div> -->
         <div class="pull-update">
-            <span>加载更多...</span>
+            <span v-text="loading?'正在加载....':'加载更多'"></span>
         </div>
     </div>
 </template>
@@ -178,12 +178,17 @@ export default {
         list:{
             type:Array,
             default:[]
+        },
+        loading:{
+            type:Boolean,
+            default:false
         }
     },
     data(){
         return{
             num:5,
-            hotelList:''
+            hotelList:'',
+            load:''
         }
     },
     methods:{
@@ -193,7 +198,14 @@ export default {
     },
     mounted(){
         this.hotelList = this.list
-        console.log(this.hotelList)
+        this.load = this.loading
+        
+    },
+    watch:{
+        list(){
+            this.hotelList = this.list
+            this.load = this.loading
+        }
     }
 }
 </script>
@@ -241,6 +253,9 @@ export default {
 .hotel-list .item-title{
     width: 3.53rem;
     margin-bottom: 0.37rem;
+    max-height: 0.62rem;
+    overflow: hidden;
+    
 }
 .hotel-list .price-symbol{
     font-size: 0.25rem;

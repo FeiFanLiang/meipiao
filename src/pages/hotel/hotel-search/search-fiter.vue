@@ -7,7 +7,7 @@
             <div class="header-title">
                 <span>排序和筛选</span>
             </div>
-            <div class="fiter-go">
+            <div class="fiter-go" @click="submit">
                 <span>确定</span>
             </div>
         </div>
@@ -22,19 +22,19 @@
                     <span>价格范围</span>
                 </div>
                 <div class="radio-wrap">
-                   <RadioGroup v-model="Radio.name"></RadioGroup>
+                   <RadioGroup v-model="Radio.price" :list="radioPrice"></RadioGroup>
                 </div>
                 <div class="items-title">
                     <span>酒店星级</span>
                 </div>
                 <div class="radio-wrap">
-                    <RadioGroup></RadioGroup>
+                    <RadioGroup v-model="Radio.star" :list="radioStar"></RadioGroup>
                 </div>
                 <div class="items-title">
                     <span>酒店评分</span>
                 </div>
                 <div class="radio-wrap">
-                    <RadioGroup></RadioGroup>
+                    <RadioGroup v-model="Radio.rate" :list="radioRate"></RadioGroup>
                 </div>
              </div>
             <div class="fiter-item">
@@ -89,28 +89,49 @@ export default {
     data(){
         return{ 
             Radio:{
-                name:''
+                price:'',
+                star:'',
+                rate:''
             },
-            show:''
+            show:'',
+            radioPrice:[
+                {label:'0-500',value:1},
+                {label:'500-1000',value:2},
+                {label:'1000-2000',value:3},
+                {label:'2000+',value:4}
+            ],
+            radioStar:[
+                {label:'1星',value:1},
+                {label:'2星',value:2},
+                {label:'3星',value:3},
+                {label:'4星',value:4},
+                {label:'5星',value:5}
+            ],
+            radioRate:[
+                {label:'1+',value:1},
+                {label:'2+',value:2},
+                {label:'3+',value:3},
+                {label:'4+',value:4},
+                {label:'5+',value:5}
+            ]
 
         }
     },
     
     methods:{
-       hide(){
+       hide(){ 
            this.show = false
-            this.$emit('hide',false)
+             this.$emit('hide',false)
+       },
+       submit(){
+           this.$emit('submit',this.Radio)
+           this.hide()
        }
     },
-    // computed:{
-    //     show:function(){
-    //         return this.popshow
-    //     }
-    // },
     watch:{
         popshow:function(value){
             this.show = value
-            console.log(this.show)
+            //  console.log(this.show)
         }
     },
     

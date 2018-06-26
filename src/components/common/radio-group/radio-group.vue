@@ -1,27 +1,39 @@
 <template>
     <div class="radio-group">
         <label v-for="(item,index) in radioList" class="radio-item">
-            <input type="radio" name="price" v-model="radio.price" :value="item.value" :index="index"
-             @change="$emit('input',$event.target.value)" class="input-radio">
-            <span :class="radio.price == item.value?'checked':'check'">{{item.label}}</span>
+            <input type="radio" name="price"  :value="item.value" :index="index"
+             @change="change($event)" class="input-radio">
+            <span :class="checked == item.value?'checked':'check'">{{item.label}}</span>
         </label>
     </div>
 </template>
 <script>
 export default {
-    props:['value'],
+    // props:['value'],
+    props:{
+        value:{},
+        list:{
+            type:Array,
+            default(){
+                return []
+            }
+        }
+    },
     data(){
         return{
-            radio:{
-                price:1
-            },
-            radioList:[
-                {label:'0-500',value:0},
-                {label:'500-1000',value:1},
-                {label:'1000-2000',value:2},
-                {label:'2000+',value:3}
-            ]
+            checked:1,
+            radioList:[]
         }
+    },
+    methods:{
+        change(event){
+            // console.log(typeof event.target.value)
+            this.checked = event.target.value
+            this.$emit('input',this.checked) 
+        }
+    },
+    mounted(){
+        this.radioList = this.list
     }
 }
 </script>
