@@ -19,167 +19,24 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="list-item" @click="getDetail">
-            <div class="hotel-img"></div>
-            <div class="hotel-detail">
-                <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
-                </div>
-                <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
-                    <div class="item-price">
-                        <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
-                        <span class="price-add">起</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="list-item">
-            <div class="hotel-img"></div>
-            <div class="hotel-detail">
-                <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
-                </div>
-                <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
-                    <div class="item-price">
-                        <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
-                        <span class="price-add">起</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="list-item">
-            <div class="hotel-img"></div>
-            <div class="hotel-detail">
-                <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
-                </div>
-                <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
-                    <div class="item-price">
-                        <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
-                        <span class="price-add">起</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="list-item">
-            <div class="hotel-img"></div>
-            <div class="hotel-detail">
-                <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
-                </div>
-                <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
-                    <div class="item-price">
-                        <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
-                        <span class="price-add">起</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="list-item">
-            <div class="hotel-img"></div>
-            <div class="hotel-detail">
-                <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
-                </div>
-                <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
-                    <div class="item-price">
-                        <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
-                        <span class="price-add">起</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="list-item">
-            <div class="hotel-img"></div>
-            <div class="hotel-detail">
-                <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
-                </div>
-                <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
-                    <div class="item-price">
-                        <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
-                        <span class="price-add">起</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="list-item">
-            <div class="hotel-img"></div>
-            <div class="hotel-detail">
-                <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
-                </div>
-                <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
-                    <div class="item-price">
-                        <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
-                        <span class="price-add">起</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="list-item">
-            <div class="hotel-img"></div>
-            <div class="hotel-detail">
-                <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
-                </div>
-                <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
-                    <div class="item-price">
-                        <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
-                        <span class="price-add">起</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="list-item">
-            <div class="hotel-img"></div>
-            <div class="hotel-detail">
-                <div class="item-title">
-                    <span>青岛海景花园大酒店(Qingdao Seaview Graden Hotel)</span>
-                </div>
-                <div class="item-main">
-                    <Rate :size="18" v-model="num" :count="5" color="#ff8a00" void-color="#ceefe8" class="item-rate"></Rate>
-                    <div class="item-price">
-                        <span class="price-symbol">¥</span>
-                        <span class="price-num">800</span>
-                        <span class="price-add">起</span>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <div class="pull-update">
-            <span v-text="loading?'正在加载....':'加载更多'"></span>
-        </div>
+       <LoadCircle :loadText="load"></LoadCircle>
     </div>
 </template>
 <script>
-import { Rate } from 'vant'
+import { Rate,Loading } from 'vant'
+import LoadCircle from '@/components/common/load-circle/load-circle'
 export default {
     components:{
-        Rate
+        Rate,
+        Loading,
+        LoadCircle
     },
     props:{
         list:{
             type:Array,
             default:[]
         },
-        loading:{
+        loadText:{
             type:Boolean,
             default:false
         }
@@ -198,13 +55,17 @@ export default {
     },
     mounted(){
         this.hotelList = this.list
-        this.load = this.loading
+        this.load = this.loadText
+        // console.log(this.load)
         
     },
     watch:{
         list(){
             this.hotelList = this.list
-            this.load = this.loading
+            
+        },
+        loadText(){
+            this.load = this.loadText
         }
     }
 }
@@ -272,13 +133,7 @@ export default {
     line-height: 0.18rem;
     font-family: '微软雅黑','Microsoft YaHei';
 }
-.pull-update{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.16rem;
-    color: #3f3b3a;
-}
+
 
 </style>
 

@@ -25,11 +25,12 @@
             </div>
             <div class="hotel-list-wrap">
                 <div class="scroll-wrap" ref="scrollWrap" v-if="demoList.length>0">
-                <HotelList :list="demoList" :loading="upload"></HotelList>
+                <HotelList :list="demoList" :loadText="loadText"></HotelList>
                 </div>
             </div>
             <Fiter :popshow="fiterShow" @hide="hide" @submit="seekHotelList"></Fiter>
-            <Loading v-if="loading"></Loading>
+            
+            <Loadtrans v-if="loading"></Loadtrans>
             </div>
     
 </template>
@@ -37,7 +38,7 @@
 import { Search, ImagePreview } from 'vant'
 import HotelList from '@/components/hotel-list/hotel-list'
 import Fiter from 'pages/hotel/hotel-search/search-fiter'
-import Loading from '@/components/common/loading/loading'
+import Loadtrans from '@/components/common/loading/loading'
 import BScroll from 'better-scroll'
 import {hotelBase} from 'api'
 export default {
@@ -45,9 +46,8 @@ export default {
         Search,
         HotelList,
         Fiter,
-        Loading,
-        // LoadMore
-
+        Loadtrans,
+       
     },
     data(){
         return{
@@ -58,7 +58,7 @@ export default {
             pageIndex:1,//当前页码
             pageCount:10,//当前页数量
             query:{},
-            upload:false
+            loadText:false
         }
     },
     created(){
@@ -77,7 +77,7 @@ export default {
                 this.scroll = new BScroll(this.$refs.scrollWrap,{
                     click:true,
                     pullUpLoad:{
-                        threshold:-300
+                        threshold:-200
                     }
                 })
                 this.scroll.on('pullingUp', () => {
@@ -85,12 +85,13 @@ export default {
                     clearTimeout(timer)
                    var timer = null
                    timer = setTimeout(() => {
-                       this.upload = true
+                       this.loadText = true
                       this.loadMore().then(()=>{
-                        this.scroll.finishPullUp()
+                        this.scroll.refresh()
+                        this.loadText = false
                        
                     }) 
-                   }, 500);
+                   }, 800);
                     
 
     })
@@ -132,9 +133,8 @@ export default {
         },
         async loadMore(){
             this.pageIndex++
-            
             await this.getHotelList(this.query)
-            // this.scroll.finishPullUp()
+            this.scroll.finishPullUp()
         },
         async seekHotelList(radio){
             const query = Object.assign(this.query,radio)
