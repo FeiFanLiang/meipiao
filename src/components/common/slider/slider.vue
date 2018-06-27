@@ -1,14 +1,22 @@
 <template>
     <div class="slider">
-        <Swipe :show-indicators="false" @change="change">
+        
+             <Swipe :show-indicators="false" @change="change">
                 <SwipeItem v-for="(item,index) in imgList" :key="index">
-                    <img v-lazy="item.imgUrl" alt="">
+                        <div class="slider-img-wrap">
+<img v-lazy="item.imgUrl">  
+                        </div>
+                      
+                    
+                    
+                    
                 </SwipeItem>
                
         </Swipe>
             <div class="slider-index">
                 <span class="current-index">1</span>/<span class="total-num">30</span>
             </div>
+       
     </div>
 </template>
 <script>
@@ -32,7 +40,7 @@ export default {
         }
     },
     mounted(){
-        console.log(this.imglist)
+        // console.log(this.imglist)
     },
     methods:{
         change(index){
@@ -42,10 +50,21 @@ export default {
 }
 </script>
 <style>
+.slider-img-wrap{
+    position: relative;
+    padding-top: 57.81%;
+}
+.slider-img-wrap img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
         .slider{
-            position: relative;
-            height: 3.7rem;
+          position: relative;
         }
+       
         .slider-index{
         position: absolute;
         display: flex;
@@ -62,13 +81,11 @@ export default {
         color: #fff;
         line-height: 0.21rem;
     }
-    .van-swipe{
-        height: 100%;
-    }
-    .van-swipe img{
+    
+    /* .van-swipe img{
         width: 100%;
-        height: 100%;
-    }
+        height: 3.7rem;
+    } */
 </style>
 
 

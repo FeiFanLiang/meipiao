@@ -1,6 +1,9 @@
 <template>
-    <div class="container">
-        <Slider :imgList="baseData.HotelImg.list" v-if="baseData"></Slider>
+    <div class="hotel-container">
+        <div class="slider-wrap">
+        <Slider  v-if="list.length>0" :imgList="list"></Slider>
+        <div class="load-background" v-if="!list.length"></div>
+        </div>
         <div class="hotel-detail">
             <h2 class="hotel-name">青岛海景花园大酒店(Qingdao Seaview Garden Hotel)</h2>
             <div class="hotel-location">
@@ -121,17 +124,22 @@ export default {
             width:0,
             baseData:'',
             sliderImg:'',
-            sonRoomList:''
+            sonRoomList:'',
+            list:[]
         }
+    },
+    created(){
+        this.getData()
     },
     mounted(){
         
-        setTimeout(() => {
-            this.scroll = new BScroll(this.$refs.scrollWrap,{
-                click:true
-            })
-        }, 300);
-        this.getData()
+        // setTimeout(() => {
+        //     this.scroll = new BScroll(this.$refs.scrollWrap,{
+        //         click:true
+        //     })
+        // }, 300);
+        
+        
     },
     methods:{
         showPop(){
@@ -143,7 +151,8 @@ export default {
             
         },
         editFiter(){
-            this.$router.push({name:'酒店搜索页'})
+             this.$router.push({name:'酒店搜索页'})
+            
         },
         goPay(){
             this.$router.push({name:'订单支付页面'})
@@ -154,13 +163,20 @@ export default {
             if(res.status == 200 && res.data.data.data){
                 const data = res.data.data.data
                 this.baseData = data
-                console.log(this.baseData.HotelImg.list)
+                this.list = data.HotelImg.list
+                // console.log(this.baseData.HotelImg.list)
             }
         }
     }
 }
 </script>
 <style>
+.load-background{
+    padding-top: 57.81%;
+    position: relative;
+    background: url('./slider-lazy.jpg')
+}
+
 .hotel-room .scroll-wrap{
     position: fixed;
     top: 9.02rem;

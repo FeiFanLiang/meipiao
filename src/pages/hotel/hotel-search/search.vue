@@ -78,21 +78,36 @@ export default {
                     click:true,
                     momentum:false,
                     pullUpLoad:{
-                        threshold:-300
+                        threshold:-150,
+                        stop:-20
                     }
                 })
                 this.scroll.on('pullingUp', () => {
-                    
-                    clearTimeout(timer)
-                   var timer = null
-                   timer = setTimeout(() => {
-                       this.loadText = true
-                      this.loadMore().then(()=>{
-                        this.scroll.refresh()
+                    if(this.loadText == true){
+                        return
+                    }
+                    this.loadText = true
+                    this.loadMore().then(()=>{
+                         this.scroll.finishPullUp()
                         this.loadText = false
+                        this.$nextTick(()=>{
+                            this.scroll.refresh()
+                        })
+                        
+                       
                     
                     }) 
-                   }, 800);
+                //     clearTimeout(timer)
+                //    var timer = null
+                //    timer = setTimeout(() => {
+                //        this.loadText = true
+                       
+                //       this.loadMore().then(()=>{
+                //         this.scroll.refresh()
+                //         this.loadText = false
+                    
+                //     }) 
+                //    }, 300);
                     
 
     })
@@ -135,7 +150,7 @@ export default {
         async loadMore(){
             this.pageIndex++
             await this.getHotelList(this.query)
-            this.scroll.finishPullUp()
+            
             
         },
         async seekHotelList(radio){
@@ -154,7 +169,7 @@ export default {
                 return
             }
             
-            this.scroll && this.scroll.refresh()
+            this.scroll.refresh()
          }
     }
     }
