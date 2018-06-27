@@ -12,6 +12,7 @@ const portfinder = require('portfinder')
 const express = require('express')
 const app = express()
 const hotelList =require('../static/mock/hotel-list.json')
+const hotelDetail = require('../static/mock/hotel.json')
 const apiRouter = express.Router()
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -54,6 +55,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           })
           }, 1000);
           
+        })
+        apiRouter.get('/api/hotelDetail/:id',(req,res)=>{
+          setTimeout(() => {
+            res.json({
+              data:hotelDetail
+            })
+          }, 1000);
         })
     }
   },

@@ -1,9 +1,9 @@
 <template>
     <div class="hotel-list">
         
-        <div class="list-item" @click="getDetail" v-for="item in hotelList">
+        <div class="list-item" @click="getDetail(item.HotelID)" v-for="item in hotelList">
             <div class="hotel-img">
-                <img :src="item.HotelImg" alt="">
+                <img v-lazy="item.HotelImg" alt="mockjpg">
             </div>
             <div class="hotel-detail">
                 <div class="item-title">
@@ -49,8 +49,8 @@ export default {
         }
     },
     methods:{
-       getDetail(){
-           this.$router.push({path:'/hotel/123124'})
+       getDetail(id){
+           this.$router.push({path:`/hotel/${id}`})
        }
     },
     mounted(){
@@ -87,6 +87,10 @@ export default {
     height: 1.5rem;
     
     /* background-color: blue; */
+}
+.hotel-img img{
+    width: 100%;
+    height: 100%;
 }
 .hotel-list .hotel-detail{
     position: relative;

@@ -3,10 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Icon } from 'vant' 
+import { Icon,Lazyload } from 'vant' 
 
 
-
+Vue.use(Lazyload,{
+  loading:require('./assets/lazy.jpg')
+})
 Vue.component('Icon',Icon)
 Vue.config.productionTip = false
 // Vue.use(BScroll)

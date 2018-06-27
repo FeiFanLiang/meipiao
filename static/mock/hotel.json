@@ -1,0 +1,294 @@
+
+{"data":    {
+        "HotelImg":{
+            "count":6,
+            "HotelRooms":[
+                {
+                    "SonroomName":"豪华家庭房",
+                    "RoomImg":"https://s1.ax1x.com/2018/06/27/PPTQfA.jpg",
+                    "SonroomId":13131,
+                    "Policy":"大床 双早",
+                    "Price":900,
+                    "Facility":"免费WIFI"
+                },
+                 {
+                    "SonroomName":"豪华大床房",
+                    "RoomImg":"https://s1.ax1x.com/2018/06/27/PPTQfA.jpg",
+                    "SonroomId":13431,
+                    "Policy":"大床 无早",
+                    "Price":920,
+                    "Facility":"可做无烟处理"
+                },
+                 {
+                    "SonroomName":"商务大床房",
+                    "RoomImg":"https://s1.ax1x.com/2018/06/27/PPTQfA.jpg",
+                    "SonroomId":13431,
+                    "Policy":"大床 双早",
+                    "Price":1200,
+                    "Facility":"商务办公用品"
+                },
+                 {
+                    "SonroomName":"豪华总统套房",
+                    "RoomImg":"https://s1.ax1x.com/2018/06/27/PPTQfA.jpg",
+                    "SonroomId":13445,
+                    "Policy":"大床 双早",
+                    "Price":1500,
+                    "Facility":"桑拿浴室"
+                }
+            ],
+            "list":[
+            {
+                "imgId":121245,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":121325,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":235242,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":2352113,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":3534512,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":234241,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            }
+            ]
+        },
+        "HotelName":"青岛海景花园大酒店",
+        "HotelName_En":"Qingdao Seaview Garden Hotel",
+        "Address":"青岛市市南区彰化路2号",
+        "HotelPrice":800,
+        "Facilities":{
+            "BaseInstallation":{
+                "PropertyParentID":1,
+                "Facility":[
+                    {
+                        "Name_En":"Public sound system",
+                        "Name":"公共音响系统",
+                        "PropertyID":8
+                    },
+                    {
+                        "Name_En":"FreeWiFi",
+                        "Name":"免费无线",
+                        "PropertyID":63
+                    },
+                    {
+                        "Name_En":"Phone",
+                        "Name":"电话",
+                        "PropertyID":73
+                    },
+                    {
+                        "Name_En":"Phone",
+                        "Name":"电话",
+                        "PropertyID":73
+                    },
+                    {
+                        "Name_En":"Free parking",
+                        "Name":"免费停车",
+                        "PropertyID":195
+                    },
+                    {
+                        "Name_En":"Swimming pool",
+                        "Name":"室内游泳池",
+                        "PropertyID":9
+                    },
+                     {
+                        "Name_En":"Safe-deposit boxes at front desk",
+                        "Name":"前台保险柜",
+                        "PropertyID":8
+                    },
+                    {
+                        "Name_En":"ATM banking",
+                        "Name":"自助取款机",
+                        "PropertyID":8
+
+                    }
+                    ],
+                "Dinner":[
+                    {
+                        "Name_En":"Coffee house",
+                        "Name":"咖啡厅",
+                        "PropertyID":8
+                    },
+                     {
+                        "Name_En":"Barbeque",
+                        "Name":"室外烧烤",
+                        "PropertyID":8
+                    },
+                     {
+                        "Name_En":"Chinese and western buffet",
+                        "Name":"中西自助餐厅",
+                        "PropertyID":8
+                    },
+                    {
+                        "Name_En":"Banquet hall",
+                        "Name":"宴会厅",
+                        "PropertyID":8
+                    },
+                    {
+                        "Name_En":"Japanese restaurant",
+                        "Name":"日餐厅",
+                        "PropertyID":8
+                    }
+                ],
+                "recreation":[
+                    {
+                        "Name_En":"Golf course",
+                        "Name":"高尔夫",
+                        "PropertyID":9
+                    },
+                    {
+                        "Name_En":"Cigar bar",
+                        "Name":"雪茄吧",
+                        "PropertyID":8
+                    },
+                    {
+                        "Name_En":"Children's playground",
+                        "Name":"儿童乐园",
+                        "PropertyID":9
+                    },
+                    {
+                        "Name_En":"Hot spring",
+                        "Name":"温泉",
+                        "PropertyID":9
+                    },
+                     {
+                        "Name_En":"Video games room",
+                        "Name":"电子游戏室",
+                        "PropertyID":9
+                    }
+                ]
+
+
+
+                
+            },
+            "RoomInstallation":{
+                "PropertyParentID":2,
+                "Facility":[
+                    {
+                        "Name_En":"24-Hour hot water",
+                        "Name":"24小时热水",
+                        "PropertyID":8
+                    },
+                    {
+                        "Name_En":"Electronic remote control curtain",
+                        "Name":"电子遥控窗帘",
+                        "PropertyID":73
+                    },
+                    {
+                        "Name_En":"Satellite channels",
+                        "Name":"卫星频道",
+                        "PropertyID":73
+                    },
+                    {
+                        "Name_En":"Multi-functional charger",
+                        "Name":"多功能充电器",
+                        "PropertyID":73
+                    },
+                    {
+                        "Name_En":"Bathroom make-up/shaving mirror",
+                        "Name":"浴室放大化妆镜",
+                        "PropertyID":73
+                    },
+                    {
+                        "Name_En":"Stereo equipement/radio",
+                        "Name":"音响设备/收音机",
+                        "PropertyID":73
+                    }
+                ],
+                "Service":[
+                    {
+                        "Name_En":"Wake-up calls",
+                        "Name":"叫醒服务",
+                        "PropertyID":7
+                    },
+                     {
+                        "Name_En":"Laundry service",
+                        "Name":"洗衣服务",
+                        "PropertyID":7
+                    },
+                     {
+                        "Name_En":"Room service",
+                        "Name":"送餐服务",
+                        "PropertyID":7
+                    },
+                     {
+                        "Name_En":"Baggage storage service",
+                        "Name":"行李寄存",
+                        "PropertyID":7
+                    }
+                ]
+            },
+            "Notify":{
+                "PropertyParentID":3,
+                "list":[
+                 {
+                        "Name_En":"can not serve foreign guest",
+                        "Name":"不能接待外宾",
+                        "PropertyID":715
+                },
+                {
+                        "Name_En":"require nationality",
+                        "Name":"需要提供国籍",
+                        "PropertyID":715
+                },
+                {
+                        "Name_En":"longs day promotion",
+                        "Name":"长住更省",
+                        "PropertyID":96
+                },
+                {
+                        "Name_En":"Near the hospital",
+                        "Name":"长住更省",
+                        "PropertyID":96
+                },
+                 {
+                        "Name_En":"ArrivalAndDeparture",
+                        "Name":"入住时间：14:00以后      离店时间：12:00以前",
+                        "PropertyID":96
+                }
+               
+            ]},
+            "Notice":{
+                "PropertyParentID":4,
+                "list":[
+                {
+                    "Name_En":"hotel located on mountaintop",
+                    "Name":"酒店位于山顶",
+                    "PropertyID":715
+                },
+                {
+                    "Name_En":"hotel located in scenic region",
+                    "Name":"酒店位于景区内",
+                    "PropertyID":715
+                },
+                {
+                    "Name_En":"pet not allowed in",
+                    "Name":"不允许携带宠物",
+                    "PropertyID":715
+                },
+                {
+                    "Name_En":"Requirements",
+                    "Name":"特殊要求视入住时可提供的服务而定，并可能产生额外的费用。不能保证满足特殊要求。信用卡授权解除需时1-3个月。视不同国家、城市之银行操作时间而定。",
+                    "PropertyID":715
+                }
+            ]}
+
+            
+        }
+        
+    }
+    
+}
+
+ 

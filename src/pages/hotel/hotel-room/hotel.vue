@@ -1,16 +1,6 @@
 <template>
     <div class="container">
-        <div class="top-slider">
-            <Swipe>
-                <SwipeItem></SwipeItem>
-                <SwipeItem></SwipeItem>
-                <SwipeItem></SwipeItem>
-                <SwipeItem></SwipeItem>
-            </Swipe>
-            <div class="slider-index">
-                <span class="current-index">1</span>/<span class="total-num">30</span>
-            </div>
-        </div>
+        <Slider :imgList="baseData.HotelImg.list" v-if="baseData"></Slider>
         <div class="hotel-detail">
             <h2 class="hotel-name">青岛海景花园大酒店(Qingdao Seaview Garden Hotel)</h2>
             <div class="hotel-location">
@@ -50,9 +40,7 @@
             </div>
             </div>
         </div>
-        <div class="pull-update">
-             
-        </div>
+       
         <PopPage class="popup-container" v-show="popShow" @hide="hide">
             <template slot="title">
                 酒店详情
@@ -110,33 +98,40 @@
     </div>
 </template>
 <script>
-import { Swipe, SwipeItem } from 'vant'
+import Slider from '@/components/common/slider/slider'
 import BScroll from 'better-scroll'
 import RoomList from '@/components/room-list/room-list'
 import PopPage from 'pages/hotel/hotel-pop/detail-pop'
-import { Tab, Tabs } from 'vant'
+import {hotelBase} from 'api'
+import{Tab,Tabs} from 'vant'
+
 export default {
     components:{
-        Swipe,
-        SwipeItem,
         RoomList,
         PopPage,
+        Slider,
         Tab,
         Tabs
+        
     },
     data(){
         return{
             popShow:false,
             active: 0,
             width:0,
+            baseData:'',
+            sliderImg:'',
+            sonRoomList:''
         }
     },
     mounted(){
+        
         setTimeout(() => {
             this.scroll = new BScroll(this.$refs.scrollWrap,{
                 click:true
             })
         }, 300);
+        this.getData()
     },
     methods:{
         showPop(){
@@ -152,6 +147,15 @@ export default {
         },
         goPay(){
             this.$router.push({name:'订单支付页面'})
+        },
+        async getData(){
+            const params = this.$route.params
+            const res =  await hotelBase.hotelDetail(params)
+            if(res.status == 200 && res.data.data.data){
+                const data = res.data.data.data
+                this.baseData = data
+                console.log(this.baseData.HotelImg.list)
+            }
         }
     }
 }

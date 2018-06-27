@@ -76,8 +76,9 @@ export default {
                 }
                 this.scroll = new BScroll(this.$refs.scrollWrap,{
                     click:true,
+                    momentum:false,
                     pullUpLoad:{
-                        threshold:-200
+                        threshold:-300
                     }
                 })
                 this.scroll.on('pullingUp', () => {
@@ -89,7 +90,7 @@ export default {
                       this.loadMore().then(()=>{
                         this.scroll.refresh()
                         this.loadText = false
-                       
+                    
                     }) 
                    }, 800);
                     
@@ -135,6 +136,7 @@ export default {
             this.pageIndex++
             await this.getHotelList(this.query)
             this.scroll.finishPullUp()
+            
         },
         async seekHotelList(radio){
             const query = Object.assign(this.query,radio)
@@ -163,17 +165,7 @@ export default {
 
 </script>
 <style>
-/* .scroll-container{
-    position: fixed;
-    top: 1rem;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-    .scroll-wrap{
-        height: 100%;
-        overflow: hidden;
-    } */
+
     .hotel-list-wrap{
         position: fixed;
         top: 3.15rem;
@@ -193,11 +185,13 @@ export default {
         padding: 0 0.16rem;
         font-size: 0.18rem;
         line-height: 0.18rem;
+        
     }
     .search-details{
         display: flex;
         padding: 0.25rem 0 0.21rem 0.13rem;
-        border-bottom: 0.01rem solid #e6e6e6;
+         border-bottom: 0.01rem solid #e6e6e6; 
+        
     }
     .details-text{
         display: flex;
@@ -247,6 +241,8 @@ export default {
         padding: 0 0.29rem 0 0.26rem;
         height: 0.75rem;
         border-bottom: 0.01rem solid #e9e9e9;
+       
+        box-sizing: border-box;
     }
     .hotel-input{
         flex: 1;
@@ -264,16 +260,33 @@ export default {
     }
     .van-search{
        background: #ffffff !important;
-       padding: 0.09rem 0.11rem;
-       border: 0.01rem solid #e6e6e6;
+       padding: 0.08rem 0.11rem;
+       
     }
     .van-search .van-icon-search{
-        left: 0.11rem;
+        left: 0.20rem;
+        font-size: 0.2rem;
     }
     .van-field__control{
         font-size: 0.16rem;
-        color: #a9a9a9;
+        color: #3d3d3d;
     }
+    .van-search .van-cell{
+        border: 0.01rem solid #e9e9e9;
+        padding: 0.05rem 0.2rem 0.05rem 0.46rem;
+    }
+    ::-webkit-input-placeholder { 
+    color:   #a9a9a9;
+}
+:-moz-placeholder { 
+    color:    #a9a9a9;
+}
+::-moz-placeholder { 
+    color:    #a9a9a9;
+}
+:-ms-input-placeholder { 
+    color:    #a9a9a9;
+}
 </style>
 
 
