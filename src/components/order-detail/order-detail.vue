@@ -28,6 +28,9 @@ export default {
         background-color: #fff;
         padding: 0.28rem 0 ;
     }
+    .order-infor .van-cell{
+        font-size: 0.24rem;
+    }
     .order-infor .order-title{
         margin-bottom: 0.37rem;
     }

@@ -97,17 +97,7 @@ export default {
                        
                     
                     }) 
-                //     clearTimeout(timer)
-                //    var timer = null
-                //    timer = setTimeout(() => {
-                //        this.loadText = true
-                       
-                //       this.loadMore().then(()=>{
-                //         this.scroll.refresh()
-                //         this.loadText = false
-                    
-                //     }) 
-                //    }, 300);
+               
                     
 
     })

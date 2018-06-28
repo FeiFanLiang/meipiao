@@ -9,8 +9,9 @@
          <div class="order-remark">
             <span>房间预订成功后将为您整晚保留</span>
         </div>
+        <div class="footer-wrap">
         <SubmitBar :price="240000" label="实付" button-text="去支付"
-  ></SubmitBar>
+  ></SubmitBar></div>
     </div>
     
 </template>
@@ -27,6 +28,20 @@ export default {
 }
 </script>
 <style>
+.footer-wrap{
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+html,body{
+    height: 100%;
+}
+    .from-container{
+       height: 100%;
+       display: flex;
+       flex-direction: column;
+       overflow: hidden;
+    }
     .order-detail-wrap{
         padding-bottom: 0.24rem;
     }
@@ -36,6 +51,7 @@ export default {
      .order-remark{
         border-top: 0.01rem solid #e6e6e6;
         padding:0.28rem 0 0 0.37rem;
+        margin-bottom: 2rem;
     }
     .from-container .van-submit-bar__bar{
         height: 0.79rem;
@@ -58,5 +74,17 @@ export default {
         font-size: 0.26rem;
         line-height: 0.79rem;
     }
+    .submitbar-wrap{
+     
+    }
+    .from-container .van-submit-bar{
+        display: flex;
+        position: relative;
+
+       
+        
+        
+        
+            }
 </style>
 

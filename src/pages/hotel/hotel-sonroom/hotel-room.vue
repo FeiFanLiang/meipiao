@@ -242,19 +242,15 @@ export default {
    }
    /* 浮层样式 */
    .sonroom-pop .pop-content{
-        padding: 0.48rem 0 0 0.44rem;
-        font-size: 0.2rem;
-        line-height: 0.275rem;
+        padding: 0.48rem 0.44rem;
+        
+        font-size: 0.18rem;
+        
         color: #4a4949;
     }
-    .sonroom-pop .pop-content{
-        padding: 0.48rem 0 0 0.44rem;
-        font-size: 0.2rem;
-        line-height: 0.275rem;
-        color: #4a4949;
-    }
+    
     .pop-content .genera{
-        width: 2.84rem;
+       
         margin-bottom: 0.5rem;
     }
     .detail-list .list-title{

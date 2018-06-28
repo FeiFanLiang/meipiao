@@ -1,5 +1,5 @@
 <template>
-     <div class="pop-wrapper">
+     <div class="pop-wrapper" @touchmove.prevent>
         <Popheader @hide="hide">
             <slot name="title"></slot>
         </Popheader>
@@ -30,6 +30,8 @@ export default {
         right: 0;
         bottom: 0;
         background-color: #fff;
+        
+        z-index: 300;
     }
     .pop-wrapper .header{
         height: 0.94rem;

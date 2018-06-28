@@ -27,9 +27,11 @@ export default {
 body{
   font-family: '微软雅黑','Microsoft YaHei';
   color:#303030;
+  position: relative;
 }
 #app{
   font-size: 0.24rem;
+  
 }
 .topHeader{
   position: relative;

@@ -4,7 +4,7 @@
              <Swipe :show-indicators="false" @change="change">
                 <SwipeItem v-for="(item,index) in imgList" :key="index">
                         <div class="slider-img-wrap">
-<img v-lazy="item.imgUrl">  
+                            <img v-lazy="item.imgUrl">  
                         </div>
                       
                     

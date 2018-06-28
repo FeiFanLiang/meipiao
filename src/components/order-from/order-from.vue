@@ -1,12 +1,12 @@
 <template>
     <div class="from-wrap">
         <div class="from-item">
-            <InputCell label="住客" placeholder="请填写您的姓名" v-model="fromData.name" required>
+            <InputCell label="住客" placeholder="请填写您的姓名" v-model="fromData.name">
                 <Icon name="info-o" slot="button" color="#116ece"></Icon>
             </InputCell>
         </div>
         <div class="from-item">
-            <InputCell label="联系方式" placeholder="请填写您的电话" v-model="fromData.phoneNum" required></InputCell>
+            <InputCell label="联系方式" placeholder="请填写您的电话" v-model="fromData.phoneNum"></InputCell>
         </div>
         <div class="from-item">
             <InputCell label="其他备注" v-model="fromData.remark"></InputCell>
@@ -83,6 +83,8 @@ export default {
         height: 0.68rem;  
         line-height: 0.24rem;
         padding: 0.23rem 0 0.20rem 0.13rem;
+        font-size: 0.24rem;
+        align-items: center;
     }
    .from-wrap .van-cell__title{
         padding-left: 0.11rem
@@ -106,7 +108,10 @@ export default {
      height: 100%;
      color: #3d3d3d;
      font-size: 0.24rem;
-     line-height: 0.24rem;
+     line-height: normal;
+ }
+ .from-wrap .van-field .van-cell__title{
+    max-width: 1.2rem;
  }
 </style>
 

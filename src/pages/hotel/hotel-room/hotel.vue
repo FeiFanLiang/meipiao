@@ -364,7 +364,7 @@ export default {
         padding: 0 0.14rem 0 0.13rem;
         background-color: #f6f6f6;
     }
-    .list-title{
+    .hotel-container .list-title{
         height: 0.72rem;
         margin-left: 0.12rem;
         font-size: 0.24rem;
