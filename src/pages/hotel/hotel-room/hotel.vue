@@ -1,15 +1,15 @@
 <template>
     <div class="hotel-container">
         <div class="slider-wrap">
-        <Slider  v-if="list.length>0" :imgList="list"></Slider>
-        <div class="load-background" v-if="!list.length"></div>
+        <Slider  v-if="sliderImg.length>0" :imgList="sliderImg"></Slider>
+        <div class="load-background" v-if="!sliderImg.length"></div>
         </div>
         <div class="hotel-detail">
-            <h2 class="hotel-name">青岛海景花园大酒店(Qingdao Seaview Garden Hotel)</h2>
+            <h2 class="hotel-name">{{baseData.HotelName}}({{baseData.HotelName_En}})</h2>
             <div class="hotel-location">
                 
                 <Icon name="location" color="#b70500" class="icon-location"/>
-                <span>青岛市市南区彰化路2号</span>
+                <span>{{baseData.Address}}</span>
                 <span class="location-map">地图 >></span>
             </div>
             <div class="order-time">
@@ -21,7 +21,7 @@
             <div class="minimum-price">
                 <div class="item-price">
                         <span class="price-symbol">¥</span>
-                        <span class="price-num">&nbsp;800</span>
+                        <span class="price-num">&nbsp;{{baseData.HotelPrice}}</span>
                         <span class="price-add">最低</span>
                 </div>
 
@@ -39,7 +39,7 @@
             </div>
             <div class="scroll-wrap">
             <div class="scroll" ref="scrollWrap">
-            <RoomList></RoomList>
+            <RoomList :list="baseData.HotelRooms" v-if="baseData.HotelRooms"></RoomList>
             </div>
             </div>
         </div>
@@ -59,13 +59,27 @@
                                 <div class="content-item">
                                 <span class="content-title">主要设施</span>
                                 <div class="content-desc">
-                                    免费WIFI 2间餐厅 室外游泳池 健身中心 SPA服务 供应早餐 会议中心 空调 每日客房清洁服务
+                                    <template v-for="item in PopData.BaseInstallation.Facility">
+                                        {{item.Name }}
+                                    </template>
                                     </div> 
                                 </div>
                                 <div class="content-item">
                                 <span class="content-title">饮食选择</span>
                                 <div class="content-desc">
-                                    每天提供自助式早餐 2间餐厅 酒吧 咖啡馆 24小时客房送餐服务
+                                    <template v-for="item in PopData.BaseInstallation.Dinner">
+                                        {{item.Name }}
+                                    </template>
+                                    
+                                    </div> 
+                                </div>
+                                 <div class="content-item">
+                                <span class="content-title">娱乐设施</span>
+                                <div class="content-desc">
+                                    <template v-for="item in PopData.BaseInstallation.recreation">
+                                        {{item.Name }}
+                                    </template>
+                                    
                                     </div> 
                                 </div>
                             </div>
@@ -74,24 +88,57 @@
                             <div slot="title">
                                 <span class="tab-item">客房设施</span>
                             </div>
-                            <div class="item-content">
-
+                            <div class="content-wrap">
+                                 <div class="content-item">
+                                <span class="content-title">娱乐设施</span>
+                                <div class="content-desc">
+                                    <template v-for="item in PopData.RoomInstallation.Facility">
+                                        {{item.Name }}
+                                </template> 
+                                    
+                                    </div> 
+                                </div>
+                                 <div class="content-item">
+                                <span class="content-title">客房服务</span>
+                                <div class="content-desc">
+                                    <template v-for="item in PopData.RoomInstallation.Service">
+                                        {{item.Name }}
+                                </template> 
+                                    
+                                    </div> 
+                                </div>  
                             </div>
                         </tab>
                         <tab title="关键咨询">
                             <div slot="title">
                                 <span class="tab-item">关键资讯</span>
                             </div>
-                            <div class="item-content">
-
+                            <div class="content-wrap">
+                                 <div class="content-item">
+                                <span class="content-title">资讯事项</span>
+                                <div class="content-desc">
+                                    <template v-for="item in PopData.Notify.list">
+                                        {{item.Name }}
+                                </template> 
+                                    
+                                    </div> 
+                                </div>  
                             </div>
                         </tab>
                         <tab title="注意事项">
                             <div slot="title">
                                 <span class="tab-item">注意事项</span>
                             </div>
-                            <div class="item-content">
-                                
+                            <div class="content-wrap">
+                                  <div class="content-item">
+                                <span class="content-title">特别注意</span>
+                                <div class="content-desc">
+                                    <template v-for="item in PopData.Notice.list">
+                                        {{item.Name }}
+                                </template> 
+                                    
+                                    </div> 
+                                </div>  
                             </div>
                         </tab>
                     </tabs>
@@ -124,8 +171,8 @@ export default {
             width:0,
             baseData:'',
             sliderImg:'',
-            sonRoomList:'',
-            list:[]
+            PopData:''
+            
         }
     },
     created(){
@@ -163,8 +210,8 @@ export default {
             if(res.status == 200 && res.data.data.data){
                 const data = res.data.data.data
                 this.baseData = data
-                this.list = data.HotelImg.list
-                // console.log(this.baseData.HotelImg.list)
+                this.sliderImg = data.HotelImg.list
+                this.PopData = data.Facilities
             }
         }
     }
@@ -178,11 +225,7 @@ export default {
 }
 
 .hotel-room .scroll-wrap{
-    position: fixed;
-    top: 9.02rem;
-    bottom: 0;
-    left: 0;
-    right: 0;
+   
 }
 .scroll-wrap .scroll{
     height: 100%;

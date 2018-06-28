@@ -13,6 +13,7 @@ const express = require('express')
 const app = express()
 const hotelList =require('../static/mock/hotel-list.json')
 const hotelDetail = require('../static/mock/hotel.json')
+const sonRoom = require('../static/mock/sonRoom.json')
 const apiRouter = express.Router()
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -61,7 +62,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             res.json({
               data:hotelDetail
             })
-          }, 1000);
+          }, 350);
+        })
+        apiRouter.get('/api/hotelDetail/:id/:id',(req,res)=>{
+          setTimeout(() => {
+            res.json({
+              data:sonRoom
+            })
+          }, 350);
         })
     }
   },

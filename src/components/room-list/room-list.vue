@@ -1,50 +1,38 @@
 <template>
     <div class="room-list">
-        <div class="list-item" @click="goRoomPages">
-            <div class="room-img"></div>
+        <div class="list-item" v-for="(item,index) in list" @click="goRoomPages(item.SonroomId,item)">
+            <div class="room-img">
+                <img v-lazy="item.RoomImg" alt="">
+            </div>
             <div class="room-detail">
-                <div class="room-name">豪华家庭房</div>
-                <div class="room-policy">大床 双早</div>
-                <div class="room-disp">免费WIFI</div>
+                <div class="room-name" v-text="item.SonroomName"></div>
+                <div class="room-policy" v-text="item.Policy"></div>
+                <div class="room-disp" v-text="item.Facility"></div>
                 <div class="room-price">
-                    <span class="price-symbol">¥</span><span class="price-num"> 980</span>
+                    <span class="price-symbol">¥</span><span class="price-num"> {{item.Price}}</span>
                 </div>
             </div>
-        </div>
-         <div class="list-item">
-            <div class="room-img"></div>
-            <div class="room-detail">
-                <div class="room-name">豪华家庭房</div>
-                <div class="room-policy">大床 双早</div>
-                <div class="room-disp">免费WIFI</div>
-                <div class="room-price">
-                    <span class="price-symbol">¥</span><span class="price-num"> 980</span>
-                </div>
-            </div>
-        </div>
-         <div class="list-item">
-            <div class="room-img"></div>
-            <div class="room-detail">
-                <div class="room-name">豪华家庭房</div>
-                <div class="room-policy">大床 双早</div>
-                <div class="room-disp">免费WIFI</div>
-                <div class="room-price">
-                    <span class="price-symbol">¥</span><span class="price-num"> 980</span>
-                </div>
-            </div>
-        </div>
+        </div>    
     </div>
 </template>
 <script>
 export default {
+    props:{
+        list:{
+            type:Array,
+            default(){
+                return []
+            }
+        }
+    },
     data(){
         return{
 
         }
     },
     methods:{
-        goRoomPages(){
-            this.$router.push({path:'/sonRoom/:12341'})
+        goRoomPages(SonroomId,obj){
+            this.$router.push({path:`/sonRoom/${SonroomId}`,query:obj})
         }
     }
 }
@@ -64,6 +52,9 @@ export default {
         height: 1.5rem;
         background-color: aqua;
 
+    }
+    .room-img img{
+        width: 100%;
     }
     .room-detail{
         position: relative;

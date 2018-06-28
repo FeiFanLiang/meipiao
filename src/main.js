@@ -11,6 +11,8 @@ Vue.use(Lazyload,{
 })
 Vue.component('Icon',Icon)
 Vue.config.productionTip = false
+
+Vue.config.devtools = true
 // Vue.use(BScroll)
 // Vue.component('Button',Button)
 /* eslint-disable no-new */

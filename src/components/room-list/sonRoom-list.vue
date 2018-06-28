@@ -1,43 +1,23 @@
 <template>
     <div class="sonroom-list">
-        <div class="list-item">
+        <div class="list-item" v-for="(item,index) in list">
             <div class="item-left">
-                <span class="sonroom-title">豪华海景房</span>
-                <span class="sonroom-add">双床 双早 2人入住</span>
+                <span class="sonroom-title" v-text="roomName"></span>
+                <span class="sonroom-add" v-text="item.Policy"></span>
             </div>
             <div class="item-center">
-                <span class="sonroom-policy">
-                    免费WIFI等
-                </span>
+                <span class="sonroom-policy">{{item.Sum}}等</span>
             </div>
             <div class="item-right">
                 <div class="sonroom-price">
-                    <span>¥</span><span> 820</span>
+                    <span>¥</span><span> {{item.Price}}</span>
                 </div>
                 <div class="sonroom-order">
                     <OrderBtn class="order-btn"></OrderBtn>
                 </div>
             </div>
         </div>
-         <div class="list-item">
-            <div class="item-left">
-                <span class="sonroom-title">豪华海景房</span>
-                <span class="sonroom-add">双床 双早 2人入住</span>
-            </div>
-            <div class="item-center">
-                <span class="sonroom-policy">
-                    免费WIFI等
-                </span>
-            </div>
-            <div class="item-right">
-                <div class="sonroom-price">
-                    <span>¥</span><span> 820</span>
-                </div>
-                <div class="sonroom-order">
-                    <OrderBtn class="order-btn"></OrderBtn>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </template>
 <script>
@@ -45,6 +25,18 @@ import OrderBtn from '@/components/common/order-btn/order-btn'
 export default {
     components:{
         OrderBtn
+    },
+    props:{
+        list:{
+            type:Array,
+            default(){
+                return []
+            }
+        },
+        roomName:{
+            type:String,
+            default:''
+        }
     },
     methods:{
        

@@ -2,11 +2,38 @@
 {"data":    {
         "HotelImg":{
             "count":6,
-            "HotelRooms":[
+            "list":[
+            {
+                "imgId":121245,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":121325,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":235242,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":2352113,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":3534512,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            },
+            {
+                "imgId":234241,
+                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
+            }
+            ]
+        },
+        "HotelRooms":[
                 {
-                    "SonroomName":"豪华家庭房",
+                    "SonroomName":"豪华海景房",
                     "RoomImg":"https://s1.ax1x.com/2018/06/27/PPTQfA.jpg",
-                    "SonroomId":13131,
+                    "SonroomId":12141,
                     "Policy":"大床 双早",
                     "Price":900,
                     "Facility":"免费WIFI"
@@ -36,33 +63,6 @@
                     "Facility":"桑拿浴室"
                 }
             ],
-            "list":[
-            {
-                "imgId":121245,
-                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
-            },
-            {
-                "imgId":121325,
-                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
-            },
-            {
-                "imgId":235242,
-                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
-            },
-            {
-                "imgId":2352113,
-                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
-            },
-            {
-                "imgId":3534512,
-                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
-            },
-            {
-                "imgId":234241,
-                "imgUrl":"https://s1.ax1x.com/2018/06/27/PPfOt1.jpg"
-            }
-            ]
-        },
         "HotelName":"青岛海景花园大酒店",
         "HotelName_En":"Qingdao Seaview Garden Hotel",
         "Address":"青岛市市南区彰化路2号",

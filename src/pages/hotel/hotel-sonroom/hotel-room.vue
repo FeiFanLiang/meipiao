@@ -1,22 +1,23 @@
 <template>
     <div class="container sonroom">
         <div class="sonroom-slider">
-            <Slider></Slider>
+            <Slider :imgList="baseData.RoomImg" v-if="baseData.RoomImg"></Slider>
         </div>
         <div class="sonroom-intro">
             <div class="sonroom-content">
                 <div class="sonroom-title">
-                    <span>豪华海景房</span>
+                    <span>{{baseData.SonRoomName}}</span>
                 </div>
                 <div class="sonroom-policy">
-                    <span>大床 无早 2人入住</span>
+                    <span v-text="targetRoom.Policy"></span>
                 </div>
                 <div class="sonroom-add">
-                    <span>免费WIFI等</span>
+                    <span>{{targetRoom.Facility}}等</span>
                 </div>
                 <div class="sonroom-price">
                     <span class="price-symbol">¥</span>
-                    <span class="price-num">800</span>
+                    <span class="price-num" v-text="targetRoom.Price">   
+                    </span>
                 </div>
                 <div class="sonroom-order">
                     <OrderBtn></OrderBtn>
@@ -27,25 +28,75 @@
            <span class="detail-link" @click="showPop">查看房间详情</span>
         </div>
         <div class="sonroom-list-wrap">
-            <SonRoomList></SonRoomList>
+            <SonRoomList :list="roomList" :roomName="targetRoom.SonroomName"></SonRoomList>
         </div>
         <div class="loading-more">
             <span>查看更多客房类型</span>
         </div>
-        <PopPage @hide="hide" v-show="popShow" class="sonroom-pop">
+        <PopPage @hide="hide" v-show="popShow" class="sonroom-pop" v-if="baseData.Facilities">
             <template slot="title">
-                豪华海景房
+                {{targetRoom.SonroomName}}
             </template>
             <template slot="content">
                 <div class="pop-content">
-                    <div class="genera">2张双人床 或 1张特大床房间面积40平方米,可欣赏海景</div>
+                    <div class="genera">{{baseData.Facilities.Outline}}</div>
                     <div class="detail-list">
                         <ul>
                             <li>
-                                <span class="list-title">网络:</span>免费WIFI
+                                <span class="list-title">网络:</span>
+                                <span>
+                                    <template v-for="item in baseData.Facilities.netWork.list">
+                                        {{item.Name }}
+                                    </template>
+                                </span>
                             </li>
                             <li>
-                                <span class="list-title">网络:</span>免费WIFI
+                                <span class="list-title">娱乐:</span>
+                                <span>
+                                    <template v-for="item in baseData.Facilities.recreation.list">
+                                        {{item.Name }}
+                                    </template>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="list-title">餐饮:</span>
+                                <span>
+                                    <template v-for="item in baseData.Facilities.Dinner.list">
+                                        {{item.Name }}
+                                    </template>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="list-title">睡眠:</span>
+                                <span>
+                                    <template v-for="item in baseData.Facilities.Rest.list">
+                                        {{item.Name }}
+                                    </template>
+                                </span>
+                            </li>
+                             <li>
+                                <span class="list-title">洗浴:</span>
+                                <span>
+                                    <template v-for="item in baseData.Facilities.Bathroom.list">
+                                        {{item.Name }}
+                                    </template>
+                                </span>
+                            </li>
+                             <li>
+                                <span class="list-title">服务:</span>
+                                <span>
+                                    <template v-for="item in baseData.Facilities.Service.list">
+                                        {{item.Name }}
+                                    </template>
+                                </span>
+                            </li>
+                             <li>
+                                <span class="list-title">实用:</span>
+                                <span>
+                                    <template v-for="item in baseData.Facilities.Utility.list">
+                                        {{item.Name }}
+                                    </template>
+                                </span>
                             </li>
                         </ul>
                     </div>
@@ -60,6 +111,7 @@ import Slider from '@/components/common/slider/slider'
 import OrderBtn from '@/components/common/order-btn/order-btn'
 import SonRoomList from '@/components/room-list/sonRoom-list'
 import PopPage from 'pages/hotel/hotel-pop/detail-pop'
+import {hotelBase} from 'api'
 export default {
     components:{
         Slider,
@@ -70,11 +122,33 @@ export default {
     },
     data(){
         return{
-            popShow:false
+            popShow:false,
+            baseData:'',
+            targetRoom:'',
+            roomList:[]
         }
     },
+    created(){
+        this.getData()
+    },
     methods:{
-        
+        async getData(){
+            
+            this.targetRoom = this.$route.query
+            const res = await hotelBase.sonRoomList('1','1')
+            
+            if(res.status == 200 && res.data.data){
+                const data  = res.data.data
+                this.baseData = data
+                const arr = data.PolicyList.filter((current)=>{
+                   return current.Id!=this.targetRoom.SonroomId
+                    
+                })
+                this.roomList = arr
+               console.log(this.baseData)
+                
+            }
+        },
         showPop(){
             this.popShow = true
         },
@@ -87,8 +161,7 @@ export default {
 <style>
     .sonroom-slider{
         position: relative;
-        height: 3.67rem;
-        background-color:greenyellow;
+       
     }
     .sonroom-intro{
         position: relative;

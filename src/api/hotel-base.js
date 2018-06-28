@@ -7,5 +7,9 @@ export default{
     hotelDetail(id){
         const url = '/api/hotelDetail/'
         return axios.get(url+id)
+    },
+    sonRoomList(hotelid,id){
+        // const url = '/api/hotelDetail/'
+        return axios.get(`/api/hotelDetail/${hotelid}/${id}`)
     }
 }

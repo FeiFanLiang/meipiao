@@ -1,0 +1,190 @@
+{
+    "SonRoomName":"豪华海景房",
+    
+     "Facilities":{
+         "Outline":"2张双人床 或 1张特大床 房间面积40平方米，可欣赏海景",
+                "netWork":{
+                    "PropertyParentID":3,
+                    "list":[
+                        {
+                         "Name_En":"FreeWiFi",
+                        "Name":"免费无线",
+                        "PropertyID":63
+                        }
+                         
+                    ]
+                },
+                "recreation":{
+                    "PropertyParentID":6,
+                    "list":[
+                        {
+                         "Name_En":"Satellite channels",
+                        "Name":"卫星频道",
+                        "PropertyID":73
+                        },
+                         {
+                        "Name_En":"Stereo equipement/radio",
+                        "Name":"音响设备/收音机",
+                        "PropertyID":73
+                        },{
+                            
+                            "Name_En":"Various kinds of sockets",
+                        "Name":"多种规格电源插座",
+                        "PropertyID":64
+                        }
+                    ]
+                },
+                "Dinner":{
+                    "PropertyParentID":18,
+                     "list":[
+                        {
+                         "Name_En":"Coffee/tea maker",
+                        "Name":"咖啡机/茶具",
+                        "PropertyID":54
+                        },
+                         {
+                        "Name_En":"Microwave oven",
+                        "Name":"微波炉",
+                        "PropertyID":71
+                        },{
+                            
+                            "Name_En":"Bottled water",
+                        "Name":"瓶装水",
+                        "PropertyID":36
+                        }
+                    ]
+                },
+                "Rest":{
+                    "PropertyParentID":28,
+                    "list":[
+                        {
+                         "Name_En":"electric blanket",
+                        "Name":"电热毯",
+                        "PropertyID":78
+                        },
+                         {
+                        "Name_En":"",
+                        "Name":"床具：鸭绒被",
+                        "PropertyID":64
+                        }
+                    ]
+                },
+                "Bathroom":{
+                    "PropertyParentID":7,
+                    "list":[
+                        {
+                         "Name_En":"Bathtub",
+                        "Name":"浴缸",
+                        "PropertyID":65
+                        },
+                         {
+                        "Name_En":"Slippers",
+                        "Name":"拖鞋",
+                        "PropertyID":64
+                        }, 
+                        {
+                        "Name_En":"Hair-dryer",
+                        "Name":"吹风机",
+                        "PropertyID":12
+                        }
+                    ]
+                },
+                "Service":{
+                    "PropertyParentID":17,
+                     "list":[
+                        {
+                         "Name_En":"Shoe shines service",
+                        "Name":"擦鞋服务",
+                        "PropertyID":12
+                        },
+                         {
+                        "Name_En":"Secretary service",
+                        "Name":"秘书服务",
+                        "PropertyID":61
+                        }, 
+                        {
+                        "Name_En":"Child care",
+                        "Name":"婴儿或儿童看护",
+                        "PropertyID":16
+                        },
+                        {
+                        "Name_En":"Wedding banquet service",
+                        "Name":"婚宴服务",
+                        "PropertyID":14
+                        }
+                    ]
+                },
+                "Utility":{
+                     "PropertyParentID":50,
+                     "list":[
+                        {
+                         "Name_En":"Translation service",
+                        "Name":"翻译服务",
+                        "PropertyID":675
+                        },
+                         {
+                        "Name_En":"Fax/copy",
+                        "Name":"传真/复印",
+                        "PropertyID":61
+                        }, 
+                        {
+                        "Name_En":"Ironing service",
+                        "Name":"熨衣服务",
+                        "PropertyID":16
+                        },
+                        {
+                        "Name_En":"Dry cleaning",
+                        "Name":"干洗",
+                        "PropertyID":14
+                        }
+                    ]
+                }
+            },
+
+    "RoomImg":[
+        {
+            "imgUrl":"https://s1.ax1x.com/2018/06/28/PiK0Zq.jpg",
+            "ImgId":12345
+        },
+         {
+            "imgUrl":"https://s1.ax1x.com/2018/06/28/PiK0Zq.jpg",
+            "ImgId":12345
+        },
+         {
+            "imgUrl":"https://s1.ax1x.com/2018/06/28/PiK0Zq.jpg",
+            "ImgId":12345
+        },
+         {
+            "imgUrl":"https://s1.ax1x.com/2018/06/28/PiK0Zq.jpg",
+            "ImgId":12345
+        },
+         {
+            "imgUrl":"https://s1.ax1x.com/2018/06/28/PiK0Zq.jpg",
+            "ImgId":12345
+        },
+         {
+            "imgUrl":"https://s1.ax1x.com/2018/06/28/PiK0Zq.jpg",
+            "ImgId":12345
+        }
+    ],
+    "PolicyList":[
+        {
+            "Policy":"大床 无早 2人入住",
+            "Price":820,
+            "Id":12141,
+            "Sum":"免费WIFI"
+        },
+         {
+            "Policy":"双床 双早 2人入住",
+            "Price":900,
+            "Id":12142,
+            "Sum":"无烟房间"
+        },
+         {
+            "Policy":"大床 双早 2人入住",
+            "Price":880,
+            "Id":12143,
+            "Sum":"免费WIFI"
+        }
+    ]
+}
